@@ -4,8 +4,6 @@
 
 ## メンバー
 
-- 綿 @Toshiki428(Toshiki Wata)
-
 | メンバー名 | Name1      | Name2        |
 | ----- | ---------- | ------------ |
 | 綿     | Toshiki428 | Toshiki Wata |
