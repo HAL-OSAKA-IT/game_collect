@@ -48,7 +48,7 @@ print_r($yasai);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>会員登録</title>
-    <link rel="stylesheet" href="../css/destyle.css">
+    <!-- <link rel="stylesheet" href="../css/destyle.css"> -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
