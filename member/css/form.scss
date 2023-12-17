@@ -1,3 +1,7 @@
+$fontWeight: 600;
+$transition: .2s;
+
+
 html {
     box-sizing: border-box;
     font-size: 16px;
@@ -9,7 +13,7 @@ html {
             font-size: 1.6rem;
             margin: 2% 0;
             padding: 3% 1%;
-            font-weight: 600;
+            font-weight: $fontWeight;
         }
         p{
             font-size: 1rem;
@@ -33,6 +37,7 @@ html {
                 width: 80%;
                 text-align: center;
                 font-weight: 600;
+                transition: $transition;
             }
         }
     }
@@ -42,10 +47,10 @@ html {
                 border: solid 1px #0075ff;
                 color: #0075ff;
                 border-radius: 0.4rem;
-            }
-            button:hover{
-                color: white;
-                background-color: #0075ff;
+                &:hover{
+                    color: white;
+                    background-color: #0075ff;
+                }
             }
         }
     }

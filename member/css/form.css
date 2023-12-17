@@ -36,6 +36,7 @@ html {
   width: 80%;
   text-align: center;
   font-weight: 600;
+  transition: 0.2s;
 }
 #form #transition_wrapper #input_area button {
   border: solid 1px #0075ff;
