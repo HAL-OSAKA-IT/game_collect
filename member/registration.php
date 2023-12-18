@@ -16,8 +16,8 @@
 // $id = 'NULL';
 // $name = 'namae';
 // $sql = "
-//     INSERT INTO games(id, name)
-//     VALUE($id, '$name')
+//     INSERT INTO members(name,password)
+//     VALUE($name, '$password')
 // ";
 // $stmt = $dbh -> prepare($sql);
 // $stmt -> execute();
@@ -57,13 +57,14 @@
         <div id="transition_wrapper" class="form_contents">
             <h2>新規会員登録</h2>
             <p>ニックネームとパスワードで会員登録</p>
-            <form action="post">
+            <form action="" method="POST">
                 <div id="input_area">
-                    <input type="text" placeholder="ニックネーム">
-                    <input type="password" placeholder="パスワード">
+                    <input type="text" placeholder="ニックネーム" name="name">
+                    <input type="password" placeholder="パスワード" name="password">
                     <button type="submit">新規会員登録</button>
                 </div>
             </form>
+            <?php echo $_POST['name']; ?>
         </div>
     </div>
 </body>
