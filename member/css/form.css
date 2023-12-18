@@ -31,19 +31,22 @@ html {
   padding-left: 3%;
 }
 #form .form_contents #input_area button {
-  margin: 5% 10%;
-  height: 6vh;
-  width: 80%;
+  display: block;
+  margin: 0 auto 2%;
+  background-color: #0075ff;
+  color: #fff;
+  padding: 2.4% 0;
+  width: 68%;
   text-align: center;
   font-weight: 600;
+  border-radius: 1.8rem;
   transition: 0.2s;
 }
 #form #transition_wrapper #input_area button {
   border: solid 1px #0075ff;
-  color: #0075ff;
   border-radius: 0.4rem;
 }
 #form #transition_wrapper #input_area button:hover {
   color: white;
-  background-color: #0075ff;
+  background-color: #003aaf;
 }/*# sourceMappingURL=form.css.map */

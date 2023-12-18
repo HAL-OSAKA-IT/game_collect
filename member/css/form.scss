@@ -1,6 +1,6 @@
 $fontWeight: 600;
 $transition: .2s;
-
+$buttoncolor:#0075ff;
 
 html {
     box-sizing: border-box;
@@ -32,11 +32,21 @@ html {
                 padding-left: 3%;
             }
             button{
-                margin: 5% 10%;
-                height: 6vh;
-                width: 80%;
+                // margin: 5% 10%;
+                // height: 6vh;
+                // width: 80%;
+                // text-align: center;
+                // font-weight: 600;
+                // transition: $transition;
+                display: block;
+                margin: 0 auto 2%;
+                background-color: $buttoncolor;
+                color: #fff;
+                padding: 2.4% 0;
+                width: 68%;
                 text-align: center;
-                font-weight: 600;
+                font-weight: $fontWeight;
+                border-radius: 1.8rem;
                 transition: $transition;
             }
         }
@@ -44,12 +54,13 @@ html {
     #transition_wrapper{
         #input_area{
             button{
-                border: solid 1px #0075ff;
-                color: #0075ff;
+                border: solid 1px $buttoncolor;
+                // color: #0075ff;
                 border-radius: 0.4rem;
                 &:hover{
                     color: white;
-                    background-color: #0075ff;
+                    background-color: #003aaf;
+                    // background-color: #0075ff;
                 }
             }
         }
