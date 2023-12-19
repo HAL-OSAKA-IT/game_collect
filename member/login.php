@@ -15,7 +15,7 @@
             <p>ユーザー名とパスワードでログイン</p>
             <form action="post">
                 <div id="input_area">
-                    <input type="text" placeholder="ユーザー名" name="name">
+                    <input type="text" placeholder="ユーザー名" name="name" autocomplete="off">
                     <input type="password" placeholder="パスワード" name="password">
                     <button type="submit">ログイン</button>
                 </div>
