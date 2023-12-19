@@ -13,3 +13,4 @@
 | 福田    | momo-717   | momo         |
 | 森田    | morita-32  | morita       |
 | 木下    | okinopita  | Okinopi      |
+| 石原 | sabuchan99 | Shosei Ishihara |
