@@ -24,7 +24,7 @@
 
         <div id="transition_wrapper" class="form_contents">
             <h2>新規会員登録</h2>
-            <a href="#">新規会員登録</a>
+            <a href="./registration.php">新規会員登録</a>
         </div>
     </div>
 </body>
