@@ -1,0 +1,82 @@
+$pd: 2%;
+$fontWeight: 600;
+$transition: .2s;
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+h1 {
+    margin: 2.5% 10%;
+    font-size: 32px;
+}
+#form{
+    margin: 0 10%;
+    background-color: #f2f2f2;
+    padding: 1.5%;
+    .form_contents{
+        margin: 0 auto;
+        &:first-child{
+            margin-bottom: 2%;
+        }
+        background-color: #fff;
+        h2{
+            font-size: 1.6rem;
+            padding: $pd;
+            font-weight: $fontWeight;
+        }
+        p{
+            font-size: 1rem;
+            margin-left: $pd;
+        }
+        #input_area{
+            margin: 0 20%;
+            padding-bottom: 2%;
+            input{
+                display: block;
+                margin: 7.5% auto;
+                width: 100%;
+                padding: 2%;
+                border: 2px solid #ddd; /*枠線*/
+                border-radius: 0.3rem;
+                padding-left: 3%;
+            }
+            button{
+                display: block;
+                margin: 0 auto 2%;
+                background-color: #0075ff;
+                color: #fff;
+                padding: 2.4% 0;
+                width: 68%;
+                text-align: center;
+                font-weight: $fontWeight;
+                border-radius: 1.8rem;
+                transition: $transition;
+                &:hover{
+                    background-color: #003aaf;
+                }
+            }
+        }
+    }
+    #transition_wrapper{
+        padding-bottom: 2%;
+        h2{
+            margin-bottom: 1%;
+        }
+        a{
+            display: block;
+            margin: 0 30%;
+            padding: 1.6%;
+            text-align: center;
+            border: solid 1px #0075ff;
+            color: #0075ff;
+            border-radius: 1.8rem;
+            transition: $transition;
+
+            &:hover{
+                color: white;
+                background-color: #0075ff;
+            }
+        }
+    }
+}
