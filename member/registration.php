@@ -10,11 +10,33 @@
  *      3.2 登録後のページに遷移する処理を書く。または、登録完了ページを下部に作り、条件分岐で登録完了後に表示するようにする。(form部分は非表示にする)
  *
  * */ 
-if (isset($name)){
-    
+
+// 入力チェック
+$inputname="";
+$inputpass="";
+if (isset($_POST['name']) && isset($_POST['password'])){
+    if (!($_POST['name']=="") && !($_POST["password"]=="")){
+        // ニックネームとパスワード確認OK
+        $test="sql実行";
+        $_POST["name"]="";
+        $_POST["password"]="";
+    }else if(($_POST['name']=="") && ($_POST["password"]=="")){
+        // ニックネーム、パスワード未入力
+        $test="name、password未入力";
+    }else if($_POST['name']==""){
+        // ニックネーム未入力
+        $inputpass='value="'.$_POST["password"].'"';
+        $test="name未入力";
+    }else if($_POST['password']==""){
+        // パスワード未入力
+        $inputname='value="'.$_POST["name"].'"';
+        $test="password未入力";
+    }
+}else{
+    $test="未定義（新規ロード）";
 }
 
-
+    
 
 
 // include '../templates/function.php';   // 関数を記述したファイルの読み込み
@@ -65,15 +87,14 @@ if (isset($name)){
             <h2>新規会員登録</h2>
             <p>ニックネームとパスワードで会員登録</p>
             
-            <form action="" method="" method="POST">
+            <form action="?" method="POST">
                 <div id="input_area">
-                    <input type="text" name="name" placeholder="ニックネーム" name="name">
-                    <input type="password" name="password" placeholder="パスワード" name="password">
+                    <input type="text" name="name" placeholder="ニックネーム" name="name" <?php echo $inputname ?>>
+                    <input type="password" name="password" placeholder="パスワード" name="password" <?php echo $inputpass ?>>
                     <button type="submit">新規会員登録</button>
-                    
+                    <?php echo $test ?>
                 </div>
             </form>
-            <?php echo $_POST['name']; ?>
         </div>
     </div>
 </body>

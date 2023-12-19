@@ -6,6 +6,9 @@ html {
 
 #form {
   margin: 0 10%;
+  background-color: #f7fbff;
+  border: solid 1px #b5b7bb;
+  border-radius: 1rem;
 }
 #form .form_contents h2 {
   font-size: 1.6rem;
