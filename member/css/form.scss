@@ -7,32 +7,36 @@ html {
     font-size: 16px;
 }
 h1 {
-    margin: 2.5% 10%;
+    margin: 1.5% 10%;
     font-size: 32px;
 }
-#form{
+#form {
     margin: 0 10%;
     background-color: #f2f2f2;
     padding: 1.5%;
-    .form_contents{
+    .form_contents {
         margin: 0 auto;
-        &:first-child{
-            margin-bottom: 2%;
-        }
         background-color: #fff;
-        h2{
+        h2 {
             font-size: 1.6rem;
             padding: $pd;
             font-weight: $fontWeight;
         }
+    }
+    #input_wrapper {
+        margin-bottom: 2%;
         p{
             font-size: 1rem;
-            margin-left: $pd;
+            padding-left: $pd;
         }
-        #input_area{
+        .error {
+            color: red;
+            margin: 1% 0;
+        }
+        #input_area {
             margin: 0 25%;
             padding-bottom: 2%;
-            input{
+            input {
                 display: block;
                 margin: 4.5% auto;
                 width: 100%;
@@ -41,7 +45,7 @@ h1 {
                 border-radius: 0.3rem;
                 padding-left: 3%;
             }
-            button{
+            button {
                 display: block;
                 margin: 0 auto 2%;
                 background-color: #0075ff;
@@ -52,28 +56,27 @@ h1 {
                 font-weight: $fontWeight;
                 border-radius: 1.8rem;
                 transition: $transition;
-                &:hover{
+                &:hover {
                     background-color: #003aaf;
                 }
             }
         }
     }
-    #transition_wrapper{
+    #transition_wrapper {
         padding-bottom: 2%;
-        h2{
+        h2 {
             margin-bottom: 0.5%;
         }
-        a{
+        a {
             display: block;
             margin: 0 32.5%;
-            padding: 1.6%;
+            padding: 1.4%;
             text-align: center;
             border: solid 1px #0075ff;
             color: #0075ff;
             border-radius: 1.8rem;
             transition: $transition;
-
-            &:hover{
+            &:hover {
                 color: white;
                 background-color: #0075ff;
             }
