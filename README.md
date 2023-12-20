@@ -8,7 +8,7 @@
 | ----- | ---------- | ------------ |
 | 綿     | Toshiki428 | Toshiki Wata |
 | 玉置    | shogo80    |              |
-| 門脇    | jmn04      | yamato-code  |
+| 門脇    | jmn04      | Yamato Kadowaki  |
 | 海津    | k4izu      | kaizu        |
 | 福田    | momo-717   | momo         |
 | 森田    | morita-32  | morita       |
