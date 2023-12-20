@@ -1,0 +1,32 @@
+header {
+  background-color: #f8f8f8;
+}
+
+header #nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header #nav h1 {
+  border: solid 1px #C5AF9C;
+  padding: 20px 75px;
+}
+
+header #nav #menu_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: solid 1px #C5AF9C;
+  border-bottom: solid 1px #C5AF9C;
+}
+
+header #nav #menu_group #menu_item {
+  padding: 20px 81px;
+}
+
+header #nav p {
+  padding: 20px 75px;
+  border: solid 1px #C5AF9C;
+}
+/*# sourceMappingURL=style.css.map */
