@@ -1,0 +1,51 @@
+#item {
+  margin: 0 300px;
+}
+
+#item h2 {
+  font-size: 30px;
+}
+
+#item #element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #b4deb4;
+  border-radius: 30px;
+}
+
+#item #element img {
+  border-radius: 30px;
+  width: 300px;
+  height: auto;
+}
+
+#item #element #detail {
+  position: relative;
+}
+
+#item #element #detail h3 {
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 100px;
+  border-bottom: solid 3px black;
+}
+
+#item #element #detail #game {
+  padding: 40px;
+}
+
+#item #element #detail #info {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+#item #element #detail a {
+  position: absolute;
+  margin-left: 50%;
+  bottom: 0;
+  padding-bottom: 5px;
+}
+/*# sourceMappingURL=style.css.map */
