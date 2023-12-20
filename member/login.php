@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
 
         <div id="transition_wrapper" class="form_contents">
-            <h3>新規会員登録</h3>
+            <h3>非会員の方</h3>
             <a href="./registration.php">新規会員登録</a>
         </div>
     </div>
