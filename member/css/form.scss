@@ -40,12 +40,6 @@ html {
                 color: #ff0000;
             }
             button{
-                // margin: 5% 10%;
-                // height: 6vh;
-                // width: 80%;
-                // text-align: center;
-                // font-weight: 600;
-                // transition: $transition;
                 display: block;
                 margin: 4% auto 2%;
                 background-color: $buttoncolor;
@@ -63,14 +57,49 @@ html {
         #input_area{
             button{
                 border: solid 1px $buttoncolor;
-                // color: #0075ff;
-                border-radius: 0.4rem;
                 &:hover{
                     color: white;
                     background-color: #003aaf;
-                    // background-color: #0075ff;
                 }
             }
+        }
+    }
+}
+
+#comp_wrapper{
+    margin: 0 10%;
+    padding: 3%;
+    background-color: #eff5fe;
+    border: #d3e1ff solid 1px;
+    border-radius: 1rem;
+    h2{
+        font-size: 1.6rem;
+        margin: 2% 0;
+        padding: 3% 2%;
+        font-weight: $fontWeight;
+    }
+    .comp_msgbox{
+        p{
+            font-size: 1rem;
+            margin: 1% 0;
+            padding: 1% 5%;
+        }
+    }
+    button{
+        display: block;
+        color: #fff;
+        background-color: $buttoncolor;
+        border: solid 1px $buttoncolor;
+        font-weight: $fontWeight;
+        text-align: center;
+        border-radius: 1.8rem;
+        width: 68%;
+        margin: 4% auto 2%;
+        padding: 2.4% 0;
+        transition: $transition;
+        &:hover{
+            color: white;
+            background-color: #003aaf;
         }
     }
 }

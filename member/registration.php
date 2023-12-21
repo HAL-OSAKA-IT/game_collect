@@ -7,7 +7,7 @@
  *  ◯3. 上部PHPタグ内部に以下の処理を書く:スーパーグローバル変数$_POSTの中身を(isset関数で)確認して、存在する場合に登録後の処理を書く。
  *      ◯3.0 余裕があればvalidation等も書く(空白、文字数、英数字のみ)また、それに応じたエラーメッセージを入力タグ近くに書く。
  *      ◯3.1 データベースにインサートする処理を書く。
- *      3.2 登録後のページに遷移する処理を書く。または、登録完了ページを下部に作り、条件分岐で登録完了後に表示するようにする。(form部分は非表示にする)
+ *      ◯3.2 登録後のページに遷移する処理を書く。または、登録完了ページを下部に作り、条件分岐で登録完了後に表示するようにする。(form部分は非表示にする)
  *
  * */ 
 
@@ -31,22 +31,25 @@ if ((isset($_POST['name'])) && (isset($_POST['password']))){
         // ニックネームとパスワード入力済
         if ((mb_strlen($_POST['name'])<=15) && (strlen($_POST['password'])<=100) && ((is_alnum($_POST["password"]))==TRUE)){
             // 桁数◯、パスワードが英数字
-            // sql実行
-            $test="sql実行";
-            include '../templates/function.php';
-            $dbh = db_connect();
-            $id = 'NULL';
-            $name = $_POST['name'];
-            $password = $_POST['password'];
-            $sql = "
-                INSERT INTO members(name,password)
-                VALUE('$name', '$password')
-            ";
-            $stmt = $dbh -> prepare($sql);
-            $stmt -> execute();
+            if (isset($sqlFlg)){
+                // SQL実行（リロード時は実行されないようflgを使用）
+                include '../templates/function.php';
+                $dbh = db_connect();
+                $id = 'NULL';
+                $name = $_POST['name'];
+                $password = $_POST['password'];
+                $sql = "
+                    INSERT INTO members(name,password)
+                    VALUE('$name', '$password')
+                ";
+                $stmt = $dbh -> prepare($sql);
+                $stmt -> execute();
+            }
             // データ初期化
             $_POST["name"]="";
             $_POST["password"]="";
+            $show=2;
+            $sqlFlg=1;
         }else{
             $inputname='value="'.$_POST["name"].'"';
             $inputpass='value="'.$_POST["password"].'"';
@@ -88,29 +91,10 @@ if ((isset($_POST['name'])) && (isset($_POST['password']))){
             $test01="<a class='errmsg'>15文字以内で入力してください</a>";
         }
     };
+}else{
+    $show=1;
 };
-
-
-// include '../templates/function.php';   // 関数を記述したファイルの読み込み
-// $dbh = db_connect();                // データベース接続
-// 返り値がある場合(SELECT)
-// $sql = "
-//         SELECT *
-//         FROM games;
-//     ";
-// $stmt = $dbh -> prepare($sql);
-// $stmt -> execute();
-// $array = $stmt -> fetchAll();
-// print_r($array);
-// echo '<br>';
 ?>
-
-
-
-<!-- phpタグとecho文を兼ね備えたタグ -->
-<!-- <p>
-<?= 'php echo aaaaaaaaaaaaaaaaaaaaaa';?>
-</p> -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -122,22 +106,39 @@ if ((isset($_POST['name'])) && (isset($_POST['password']))){
     <link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
-    <div id="form" >
-        <div id="transition_wrapper" class="form_contents">
-            <h2>新規会員登録</h2>
-            <p>ニックネームとパスワードで会員登録</p>
-            
-            <form action="?" method="POST">
-                <div id="input_area">
-                    <input type="text" name="name" placeholder="ニックネーム" name="name" <?php echo $inputname ?>>
-                    <?php echo $test01 ?>
-                    <input type="password" name="password" placeholder="パスワード" name="password" <?php echo $inputpass ?>>
-                    <?php echo $test02 ?>
-                    <button type="submit">新規会員登録</button>
-                </div>
+    <!-- 未登録時 -->
+    <?php if ($show==1) { ?>
+        <div id="form" >
+            <div id="transition_wrapper" class="form_contents">
+                <h2>新規会員登録</h2>
+                <p>ニックネームとパスワードで会員登録</p>
+
+                <form action="?" method="POST">
+                    <div id="input_area">
+                        <input type="text" name="name" placeholder="ニックネーム" name="name" <?php echo $inputname ?>>
+                        <?php echo $test01 ?>
+                        <input type="password" name="password" placeholder="パスワード" name="password" <?php echo $inputpass ?>>
+                        <?php echo $test02 ?>
+                        <button type="submit">新規会員登録</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <?php echo $test ?>
+    <?php } ?>
+
+    <!-- 登録完了後 -->
+    <?php if ($show==2) { ?>
+        <div id="comp_wrapper">
+            <h2>会員登録完了</h2>
+            <div class="comp_msgbox">
+                <p>game_collectのアカウント登録が完了しました</p>
+                <p>早速ゲームを遊んでみましょう！</p>
+            </div>
+            <form action="/game_collect/" method="POST">
+                <button type="submit">ホームへ</button>
             </form>
         </div>
-    </div>
-    <?php echo $test ?>
+    <?php } ?>
 </body>
 </html>
