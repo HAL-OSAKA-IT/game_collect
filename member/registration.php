@@ -2,8 +2,8 @@
 /**]
  *残りのやること
  * 
- *  1. form部分の背景色がわかりやすいようにボックス幅を作って、全体の背景から変更する
- *  2. formのaction属性はこのファイル(空またはregistration.php?)にし、method属性はpostにする。
+ *  ◯1. form部分の背景色がわかりやすいようにボックス幅を作って、全体の背景から変更する
+ *  ◯2. formのaction属性はこのファイル(空またはregistration.php?)にし、method属性はpostにする。
  *  3. 上部PHPタグ内部に以下の処理を書く:スーパーグローバル変数$_POSTの中身を(isset関数で)確認して、存在する場合に登録後の処理を書く。
  *      3.0 余裕があればvalidation等も書く(空白、文字数、英数字のみ)また、それに応じたエラーメッセージを入力タグ近くに書く。
  *      3.1 データベースにインサートする処理を書く。
@@ -11,30 +11,35 @@
  *
  * */ 
 
-// 入力チェック
+/*      入力チェック       */
+// 入力済み初期化
 $inputname="";
 $inputpass="";
-if (isset($_POST['name']) && isset($_POST['password'])){
-    if (!($_POST['name']=="") && !($_POST["password"]=="")){
+$test="";
+$test01="";
+$test02="";
+// 文字数制限
+// $
+if ((isset($_POST['name'])) && (isset($_POST['password']))){
+    if (!(empty($_POST['name'])) && !(empty($_POST["password"]))){
         // ニックネームとパスワード確認OK
         $test="sql実行";
         $_POST["name"]="";
         $_POST["password"]="";
-    }else if(($_POST['name']=="") && ($_POST["password"]=="")){
+    }else if((empty($_POST['name'])) && (empty($_POST["password"]))){
         // ニックネーム、パスワード未入力
-        $test="name、password未入力";
-    }else if($_POST['name']==""){
+        $test01="<a class='errmsg'>ニックネームを入力してください</a>";
+        $test02="<a class='errmsg'>パスワードを入力してください</a>";
+    }else if(empty($_POST['name'])){
         // ニックネーム未入力
         $inputpass='value="'.$_POST["password"].'"';
-        $test="name未入力";
-    }else if($_POST['password']==""){
+        $test01="<a class='errmsg'>ニックネームを入力してください</a>";
+    }else if(empty($_POST['password'])){
         // パスワード未入力
         $inputname='value="'.$_POST["name"].'"';
-        $test="password未入力";
-    }
-}else{
-    $test="未定義（新規ロード）";
-}
+        $test02="<a class='errmsg'>パスワードを入力してください</a>";
+    };
+};
 
     
 
@@ -90,9 +95,10 @@ if (isset($_POST['name']) && isset($_POST['password'])){
             <form action="?" method="POST">
                 <div id="input_area">
                     <input type="text" name="name" placeholder="ニックネーム" name="name" <?php echo $inputname ?>>
+                    <?php echo $test01 ?>
                     <input type="password" name="password" placeholder="パスワード" name="password" <?php echo $inputpass ?>>
+                    <?php echo $test02 ?>
                     <button type="submit">新規会員登録</button>
-                    <?php echo $test ?>
                 </div>
             </form>
         </div>
