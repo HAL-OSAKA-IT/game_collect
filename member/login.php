@@ -65,9 +65,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <?php endif; ?>
             <form action="" method="post">
                 <div id="input_area">
-                    <input type="text" placeholder="ユーザー名" name="name" autocomplete="off">
-                    <input type="password" placeholder="パスワード" name="password">
-                    <button type="submit">ログイン</button>
+                    <!-- ユーザー名の入力 -->
+                    <input type="text" id="name" placeholder="ユーザー名" name="name" autocomplete="off">
+                    <!-- パスワードエリア -->
+                    <div class="password_wrapper">
+                        <!-- パスワードの入力 -->
+                        <input type="password" id="password" placeholder="パスワード" name="password">
+                        <!-- パスワード表示切り替えボタン（アイコン） -->
+                        <i id="toggle_password"></i>
+                    </div>
+                    <!-- ログインボタン -->
+                    <button id="login_btn" type="submit">ログイン</button>
                 </div>
             </form>
         </div>
@@ -77,4 +85,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <a href="./registration.php">新規会員登録</a>
         </div>
     </div>
+
+
+    <!--
+        ====================================================
+                パスワード表示切り替えscript ここから
+        ====================================================
+    -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const togglePassword = document.querySelector("#toggle_password");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function() {
+        // パスワードのタイプを切り替える
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+
+        // アイコンのスタイルを切り替える
+        this.classList.toggle("is-visible");
+        });
+    });
+    </script>
+    <!--
+        ====================================================
+                パスワード表示切り替えscript ここまで
+        ====================================================
+    -->
+
 </body>
