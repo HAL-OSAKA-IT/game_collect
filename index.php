@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/style.css?=231220">
 </head>
 
+<?php include ( dirname(__FILE__) . '/templates/header.php' ); ?>
 <body>
     <main>
         <section id="game-list">
