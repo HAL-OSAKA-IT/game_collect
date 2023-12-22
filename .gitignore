@@ -1,3 +1,4 @@
+# igonoreしたいファイルなどを列挙すると、GitHubの方へコミットしなくなる
 .env
 vendor
 composer.json
