@@ -11,18 +11,34 @@
 </head>
 
 <body>
-    <div id="item">
-        <h2>ゲーム一覧</h2>
-        <div id="element">
-            <img src="./image/海月ご飯.jpeg" alt="">
-            <div id="detail">
-                <h3>タイトル</h3>
-                <p id="game">ゲーム紹介文</p>
-                <p id="info">情報</p>
-                <a href="#">ランキングを見る</a>
-            </div>
-        </div>
-    </div>
+    <main>
+        <section id="game-list">
+            <h2>ゲーム一覧</h2>
+            <div class="game">
+                <p class="game-image"><img src="./image/gameImage.png" alt="ゲーム名"></p>
+                <div class="detail">
+                    <h3>ゲームタイトル</h3>
+                    <p class="desc">ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文</p>
+                    <div class="bottom-info">
+                        <p class="info">何かの情報</p>
+                        <p class="ranking"><a href="#">ランキングを見る</a></p>
+                    </div><!-- bottom-info -->
+                </div><!-- detail -->
+            </div><!-- game -->
+            
+            <div class="game">
+                <p class="game-image"><img src="./image/gameImage.png" alt="ゲーム名"></p>
+                <div class="detail">
+                    <h3>ゲームタイトル</h3>
+                    <p class="desc">ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文</p>
+                    <div class="bottom-info">
+                        <p class="info">何かの情報</p>
+                        <p class="ranking"><a href="#">ランキングを見る</a></p>
+                    </div><!-- bottom-info -->
+                </div><!-- detail -->
+            </div><!-- game -->
+        </section><!-- game-list -->
+    </main>
 </body>
 
 </html>

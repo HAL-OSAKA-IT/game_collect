@@ -1,51 +1,62 @@
-#item {
-  margin: 0 300px;
+main #game-list {
+  width: 60%;
+  margin: 0 auto;
 }
-
-#item h2 {
-  font-size: 30px;
+main #game-list h2 {
+  padding-bottom: 2px;
+  border-bottom: 5px solid #AC9494;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: bold;
 }
-
-#item #element {
-  display: -webkit-box;
-  display: -ms-flexbox;
+main #game-list .game {
+  --image-size: 15vw;
   display: flex;
-  background-color: #b4deb4;
-  border-radius: 30px;
+  width: 95%;
+  height: var(--image-size);
+  border-radius: 15px;
+  margin: 0 auto 15px;
+  background-color: #DBE5C6;
 }
-
-#item #element img {
-  border-radius: 30px;
-  width: 300px;
-  height: auto;
+main #game-list .game .game-image {
+  width: var(--image-size);
+  height: 100%;
 }
-
-#item #element #detail {
+main #game-list .game .game-image img {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+}
+main #game-list .game .detail {
   position: relative;
+  width: calc(100% - var(--image-size) - 20px);
+  padding-top: 10px;
+  margin: 0 auto;
 }
-
-#item #element #detail h3 {
-  font-size: 40px;
-  padding-left: 10px;
-  padding-right: 100px;
-  border-bottom: solid 3px black;
+main #game-list .game .detail h3 {
+  padding-bottom: 2px;
+  border-bottom: 5px solid #7575E1;
+  margin-bottom: calc(var(--image-size) / 5);
+  font-size: 30px;
+  font-weight: bold;
 }
-
-#item #element #detail #game {
-  padding: 40px;
+main #game-list .game .detail .desc {
+  font-size: 16px;
 }
-
-#item #element #detail #info {
+main #game-list .game .detail .bottom-info {
   position: absolute;
-  bottom: 0;
-  margin: 0;
-  padding-bottom: 5px;
+  bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
-
-#item #element #detail a {
-  position: absolute;
-  margin-left: 50%;
-  bottom: 0;
-  padding-bottom: 5px;
+main #game-list .game .detail .bottom-info .info {
+  font-size: 16px;
 }
-/*# sourceMappingURL=style.css.map */
+main #game-list .game .detail .bottom-info .ranking a {
+  font-size: 16px;
+  transition: 0.3s;
+}
+main #game-list .game .detail .bottom-info .ranking a:hover {
+  opacity: 20%;
+}/*# sourceMappingURL=style.css.map */
