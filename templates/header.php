@@ -1,5 +1,5 @@
 <?php 
-// 読み込み方法
+// 読み込み方法: body要素の上に以下を記述、ただし <?php と ?[これは削除]> で囲むこと
 // include ( dirname(__FILE__) . '/templates/header.php' );
 ?>
 
