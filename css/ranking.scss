@@ -23,11 +23,12 @@
 #game2_ranking_container, 
 #game3_ranking_container,
 #game4_ranking_container{
+    height: 0;
     margin: 0 auto;
     position: fixed;
     left: 5%;
     z-index: -10;
-    cursor: default;
+    // cursor: default;
     opacity: 0;
     width: 90vw;
     height: 90vh;
@@ -35,89 +36,90 @@
     text-align: center;
     background-color: white;
     overflow-x: hidden;
-    h2{
-        border-bottom: 3px solid black;
-        width: 20vw;
-        margin: 0 auto;
-        margin-bottom: 1.3rem;
-        padding-top: 1.2rem;
-        font-size: 2rem;
-        font-weight: bold;
-        z-index: 10;
-    }
-    p{
-        margin-bottom: 0.8rem;
-        font-size: 1.2rem;
-    }
+    #ranking_container{
+        h2{
+            border-bottom: 3px solid black;
+            width: 20vw;
+            margin: 0 auto;
+            margin-bottom: 1.3rem;
+            padding-top: 1.2rem;
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        p{
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
 
-    #ranking{
-        margin: 0 auto;
+        .table{
+            margin: 0 auto;
+            width: 60vw;
+            // height: 50vh;
+            overflow-y: auto;
+            background-color: rgb(217, 255, 255);
+            border: black solid 2px;
+            overflow-y: scroll;
+            margin-bottom: 1.3rem;
+        
+            tr{
+                border: black solid 1px;
+            }
+            tr:nth-child(even){
+                background-color: #eee;
+            }
+            .t_head{
+                height: 7vh;
+            }
+            .rank{
+                width: 20%;
+            }
+            .name{
+                width: 60%;
+            }
+            .score{
+                width: 20%;
+            }
+            th{
+                height: 7vh;
+                border-bottom: black dashed 2px;
+                border-right: black dashed 1px;
+                text-align: center;
+                vertical-align: middle;
+                position: relative;
+                top: 0;
+            }
+            td{
+                height: 15vh;
+                text-align: center;
+                vertical-align: middle;
+                border: black dashed 1px;
+                margin: auto 0;
+            }
+        }
+        .back{
+            background-color: red;
+            border: rgb(223, 186, 186) solid 1px;
+            color: white;
+            font-weight: bold;
+            padding: 2vh 7vw;
+            border: none;
+            margin-bottom: 2rem;
+            transition    : .5s;
+            box-shadow    : 3px 3px 1px #666666;  
+            &:hover{
+                background-color: white;
+                color: red;
+                border: red solid 1px;         
+                box-shadow    : 1.5px 1.5px 0.5px #666666; 
+            }  
+        }
     }
 }
 
-.table{
-    margin: 0 auto;
-    width: 60vw;
-    // height: 50vh;
-    overflow-y: auto;
-    background-color: rgb(217, 255, 255);
-    border: black solid 2px;
-    overflow-y: scroll;
-    margin-bottom: 1.3rem;
 
-    tr{
-        border: black solid 1px;
-    }
-    tr:nth-child(even){
-        background-color: #eee;
-    }
-    .t_head{
-        height: 7vh;
-    }
-    .rank{
-        width: 20%;
-    }
-    .name{
-        width: 60%;
-    }
-    .score{
-        width: 20%;
-    }
-    th{
-        height: 7vh;
-        border-bottom: black dashed 2px;
-        border-right: black dashed 1px;
-        text-align: center;
-        vertical-align: middle;
-        position: relative;
-        top: 0;
-    }
-    td{
-        height: 15vh;
-        text-align: center;
-        vertical-align: middle;
-        border: black dashed 1px;
-        margin: auto 0;
-    }
-}
 
-.back{
-    background-color: red;
-    border: white solid 1px;
-    color: white;
-    font-weight: bold;
-    padding: 2vh 7vw;
-    border: none;
-    margin-bottom: 2rem;
-    transition    : .5s;
-    box-shadow    : 3px 3px 1px #666666;    
-}
-.back:hover{
-    background-color: white;
-    color: red;
-    border: red solid 1px;         
-    box-shadow    : 1.5px 1.5px 0.5px #666666;    
-}
+
 #game1_ranking_container.panelactive,
 #game2_ranking_container.panelactive,
 #game3_ranking_container.panelactive,
@@ -138,12 +140,3 @@ body.panelactive{
     position: relative;
     z-index: -10;
 }
-
-body.panelactive{
-    background-color: rgba(0, 0, 0, 0.7);
-    transition: all 0.6s;
-    position: relative;
-    z-index: -10;
-}
-
-

@@ -2,21 +2,15 @@
   margin: 0 auto;
   width: 100%;
 }
-
 .fixed_bar ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 .fixed_bar ul li {
   width: 25%;
   color: black;
   background-color: aquamarine;
 }
-
 .fixed_bar ul li:hover {
   color: aquamarine;
   background-color: black;
@@ -26,25 +20,23 @@
 #game2_ranking_container,
 #game3_ranking_container,
 #game4_ranking_container {
+  height: 0;
   margin: 0 auto;
   position: fixed;
   left: 5%;
   z-index: -10;
-  cursor: default;
   opacity: 0;
   width: 90vw;
   height: 90vh;
-  -webkit-transition: all 0.6s;
   transition: all 0.6s;
   text-align: center;
   background-color: white;
   overflow-x: hidden;
 }
-
-#game1_ranking_container h2,
-#game2_ranking_container h2,
-#game3_ranking_container h2,
-#game4_ranking_container h2 {
+#game1_ranking_container #ranking_container h2,
+#game2_ranking_container #ranking_container h2,
+#game3_ranking_container #ranking_container h2,
+#game4_ranking_container #ranking_container h2 {
   border-bottom: 3px solid black;
   width: 20vw;
   margin: 0 auto;
@@ -54,57 +46,65 @@
   font-weight: bold;
   z-index: 10;
 }
-
-#game1_ranking_container p,
-#game2_ranking_container p,
-#game3_ranking_container p,
-#game4_ranking_container p {
+#game1_ranking_container #ranking_container p,
+#game2_ranking_container #ranking_container p,
+#game3_ranking_container #ranking_container p,
+#game4_ranking_container #ranking_container p {
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
 }
-
-#game1_ranking_container #ranking,
-#game2_ranking_container #ranking,
-#game3_ranking_container #ranking,
-#game4_ranking_container #ranking {
-  margin: 0 auto;
-}
-
-.table {
+#game1_ranking_container #ranking_container .table,
+#game2_ranking_container #ranking_container .table,
+#game3_ranking_container #ranking_container .table,
+#game4_ranking_container #ranking_container .table {
   margin: 0 auto;
   width: 60vw;
   overflow-y: auto;
-  background-color: #d9ffff;
+  background-color: rgb(217, 255, 255);
   border: black solid 2px;
   overflow-y: scroll;
   margin-bottom: 1.3rem;
 }
-
-.table tr {
+#game1_ranking_container #ranking_container .table tr,
+#game2_ranking_container #ranking_container .table tr,
+#game3_ranking_container #ranking_container .table tr,
+#game4_ranking_container #ranking_container .table tr {
   border: black solid 1px;
 }
-
-.table tr:nth-child(even) {
+#game1_ranking_container #ranking_container .table tr:nth-child(even),
+#game2_ranking_container #ranking_container .table tr:nth-child(even),
+#game3_ranking_container #ranking_container .table tr:nth-child(even),
+#game4_ranking_container #ranking_container .table tr:nth-child(even) {
   background-color: #eee;
 }
-
-.table .t_head {
+#game1_ranking_container #ranking_container .table .t_head,
+#game2_ranking_container #ranking_container .table .t_head,
+#game3_ranking_container #ranking_container .table .t_head,
+#game4_ranking_container #ranking_container .table .t_head {
   height: 7vh;
 }
-
-.table .rank {
+#game1_ranking_container #ranking_container .table .rank,
+#game2_ranking_container #ranking_container .table .rank,
+#game3_ranking_container #ranking_container .table .rank,
+#game4_ranking_container #ranking_container .table .rank {
   width: 20%;
 }
-
-.table .name {
+#game1_ranking_container #ranking_container .table .name,
+#game2_ranking_container #ranking_container .table .name,
+#game3_ranking_container #ranking_container .table .name,
+#game4_ranking_container #ranking_container .table .name {
   width: 60%;
 }
-
-.table .score {
+#game1_ranking_container #ranking_container .table .score,
+#game2_ranking_container #ranking_container .table .score,
+#game3_ranking_container #ranking_container .table .score,
+#game4_ranking_container #ranking_container .table .score {
   width: 20%;
 }
-
-.table th {
+#game1_ranking_container #ranking_container .table th,
+#game2_ranking_container #ranking_container .table th,
+#game3_ranking_container #ranking_container .table th,
+#game4_ranking_container #ranking_container .table th {
   height: 7vh;
   border-bottom: black dashed 2px;
   border-right: black dashed 1px;
@@ -113,35 +113,38 @@
   position: relative;
   top: 0;
 }
-
-.table td {
+#game1_ranking_container #ranking_container .table td,
+#game2_ranking_container #ranking_container .table td,
+#game3_ranking_container #ranking_container .table td,
+#game4_ranking_container #ranking_container .table td {
   height: 15vh;
   text-align: center;
   vertical-align: middle;
   border: black dashed 1px;
   margin: auto 0;
 }
-
-.back {
+#game1_ranking_container #ranking_container .back,
+#game2_ranking_container #ranking_container .back,
+#game3_ranking_container #ranking_container .back,
+#game4_ranking_container #ranking_container .back {
   background-color: red;
-  border: white solid 1px;
+  border: rgb(223, 186, 186) solid 1px;
   color: white;
   font-weight: bold;
   padding: 2vh 7vw;
   border: none;
   margin-bottom: 2rem;
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-box-shadow: 3px 3px 1px #666666;
-          box-shadow: 3px 3px 1px #666666;
+  transition: 0.5s;
+  box-shadow: 3px 3px 1px #666666;
 }
-
-.back:hover {
+#game1_ranking_container #ranking_container .back:hover,
+#game2_ranking_container #ranking_container .back:hover,
+#game3_ranking_container #ranking_container .back:hover,
+#game4_ranking_container #ranking_container .back:hover {
   background-color: white;
   color: red;
   border: red solid 1px;
-  -webkit-box-shadow: 1.5px 1.5px 0.5px #666666;
-          box-shadow: 1.5px 1.5px 0.5px #666666;
+  box-shadow: 1.5px 1.5px 0.5px #666666;
 }
 
 #game1_ranking_container.panelactive,
@@ -153,24 +156,13 @@
   z-index: 10;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  -webkit-transition: all 0.6s;
   transition: all 0.6s;
   opacity: 1;
 }
 
 body.panelactive {
   background-color: rgba(0, 0, 0, 0.7);
-  -webkit-transition: all 0.6s;
   transition: all 0.6s;
   position: relative;
   z-index: -10;
-}
-
-body.panelactive {
-  background-color: rgba(0, 0, 0, 0.7);
-  -webkit-transition: all 0.6s;
-  transition: all 0.6s;
-  position: relative;
-  z-index: -10;
-}
-/*# sourceMappingURL=ranking.css.map */
+}/*# sourceMappingURL=ranking.css.map */

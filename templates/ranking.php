@@ -22,7 +22,7 @@
 
 
 <!-- game1_ranking -->
-<div id="game1_ranking_container">
+<div id="game1_ranking_container" class="ranking_wrapper">
   <!-- 実現できなかったので実装していません -->
     <!-- <div class="fixed_bar">
         <ul>
@@ -64,7 +64,7 @@
 </div>
 
 <!-- game2_ranking -->
-<div id="game2_ranking_container" class="screen">
+<div id="game2_ranking_container" class="screen ranking_wrapper">
 
     <div id="ranking_container">
         <h2>ランキング</h2>
@@ -97,7 +97,7 @@
 </div>
 
 <!-- game3_ranking -->
-<div id="game3_ranking_container" class="screen">
+<div id="game3_ranking_container" class="screen ranking_wrapper">
 
     <div id="ranking_container">
         <h2>ランキング</h2>
@@ -130,7 +130,7 @@
 </div>
 
 <!-- game4_ranking -->
-<div id="game4_ranking_container" class="screen">
+<div id="game4_ranking_container" class="screen ranking_wrapper">
 
     <div id="ranking_container">
         <h2>ランキング</h2>
