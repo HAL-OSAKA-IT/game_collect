@@ -81,6 +81,7 @@ if ((isset($_POST['name'])) && (isset($_POST['password']))){
         }
     };
 }else{
+    // 初回ロード
     $show=1;
 };
 ?>
