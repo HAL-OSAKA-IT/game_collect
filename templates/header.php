@@ -24,7 +24,7 @@ $siteURL = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_
             <ul id="menu_group">
 				<!-- ログイン状態によって表示項目を変化 -->
 				<?php
-					if(!empty($_SESSION['user_id'])){
+					if(empty($_SESSION['user_id'])){
 						echo '<li class="menu_item"><a href="' . $siteURL . '/member/login.php">ログイン/会員登録</a></li>';
 					}else{
 						echo '<li class="menu_item"><a href="' . $siteURL . '">アカウント削除</a></li>';
