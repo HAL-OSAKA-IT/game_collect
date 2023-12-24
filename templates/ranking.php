@@ -1,26 +1,17 @@
 <?php
+    // includeする前に$game_number, $game_titleを定義する必要があります。
+    // また、function.phpをincludeしておく必要があります。
+    $array_ranking = return_ranking($game_number);
     $siteURL = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/game_collect';
-    // echo $siteURL;
-    include './function.php';   // 関数を記述したファイルの読み込み
-
-    $array_ranking = return_ranking(1);
-    echo '<PRE>';
-    print_r($array_ranking);
-    echo '</PRE>';
 ?>
-<!DOCTYPE html>
-<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo $siteURL; ?>css/destyle.css">
-    <link rel="stylesheet" href="<?php echo $siteURL; ?>/templates/css/ranking.css">
+    <link rel="stylesheet" href="<?php echo $siteURL; ?>/templates/css/ranking.css?231224">
 </head>
-<body>
-<div id="game1_ranking_container" class="ranking_wrapper">
-    <div id="ranking_container">
+
+<div class="ranking_wrapper">
+    <div class="ranking_container">
         <h2>ランキング</h2>
-        <p>game1</p>
+        <p><?php echo $game_title; ?></p>
         <table class="table">
             <tr>
                 <th class="rank">
@@ -35,7 +26,7 @@
             </tr>
 
             <?php
-                foreach($array_game as $index => $record){
+                foreach($array_ranking as $index => $record){
                     $display_index = $index + 1;
                     echo "<tr><td>$display_index</td><td>{$record['name']}</td><td>{$record['score']}</td></tr>";
                 }
@@ -46,7 +37,3 @@
         <button class="back">戻る</button>
     </div>
 </div>
-<script src="../js/jquery-3.6.0.min.js"></script>
-<script src="../js/ranking.js"></script>
-</body>
-</html>

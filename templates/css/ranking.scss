@@ -1,75 +1,30 @@
-.fixed_bar{
-    margin: 0 auto ;
-    width: 100%;
-    ul{
-        display: flex;
-        flex-wrap: wrap;
-        
-        
-        
-        li{
-            width: 25%;
-            color: black;
-            background-color: aquamarine;
-        }
-        li:hover{
-            color: aquamarine;
-            background-color: black;
-        }
-    }
-}
-
-#game1_ranking_container, 
-#game2_ranking_container, 
-#game3_ranking_container,
-#game4_ranking_container{
-    height: 0;
-    margin: 0 auto;
-    position: fixed;
-    left: 5%;
-    z-index: -10;
-    // cursor: default;
-    opacity: 0;
-    width: 90vw;
-    height: 90vh;
-    transition: all 0.6s;
+// 最低限のスタイルのみ記述
+// 細かい記述は各ページのcssで記述
+.ranking_wrapper{
     text-align: center;
     background-color: white;
     overflow-x: hidden;
-    #ranking_container{
+    .ranking_container{
+        height: 100%;
+        width: 100%;
         h2{
-            border-bottom: 3px solid black;
-            width: 20vw;
-            margin: 0 auto;
-            margin-bottom: 1.3rem;
-            padding-top: 1.2rem;
-            font-size: 2rem;
+            font-size: 24px;
             font-weight: bold;
-            z-index: 10;
         }
         p{
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
+            font-size: 16px;
         }
 
         .table{
-            margin: 0 auto;
-            width: 60vw;
-            // height: 50vh;
-            overflow-y: auto;
             background-color: rgb(217, 255, 255);
             border: black solid 2px;
             overflow-y: scroll;
-            margin-bottom: 1.3rem;
         
             tr{
                 border: black solid 1px;
             }
             tr:nth-child(even){
                 background-color: #eee;
-            }
-            .t_head{
-                height: 7vh;
             }
             .rank{
                 width: 20%;
@@ -115,28 +70,4 @@
             }  
         }
     }
-}
-
-
-
-
-#game1_ranking_container.panelactive,
-#game2_ranking_container.panelactive,
-#game3_ranking_container.panelactive,
-#game4_ranking_container.panelactive{
-    margin: 0 auto;
-    // bottom: 5vh;
-    position: fixed;
-    z-index: 10; 
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    transition: all 0.6s;
-    opacity: 1;
-}
-
-body.panelactive{
-    background-color: rgba(0, 0, 0, 0.7);
-    transition: all 0.6s;
-    position: relative;
-    z-index: -10;
 }

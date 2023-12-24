@@ -1,4 +1,25 @@
 main{
+    .layer{
+        // モーダルを開いたときのグレー背景のスタイル
+        background: rgba(0, 0, 0, .3); // 背景を薄くする
+        width: 100vw;
+        height: 100vh;
+        position: fixed; // 画面に固定するために指定
+        top: 0;
+        left: 0;
+        transition: 0.6s;
+        // 最初は非表示にする
+        z-index: -10;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .layer.panelactive{
+        // モーダルを表示する
+        z-index: 999;
+        opacity: 1;
+        visibility: visible;
+    }
+
     #game-list{
         width: 60%;
         margin: 0 auto;
@@ -54,7 +75,7 @@ main{
                         bottom: 5px;
                         right: 0;
 
-                        a{
+                        button{
                             font-size: 16px;
                             transition: 0.3s;
 
@@ -64,6 +85,54 @@ main{
                         }
                     }
                 }
+            }
+
+            // ranking.phpをindex.phpで呼び出したときのスタイル
+            .ranking_wrapper{
+                width: 80vw;
+                height: 80vh;
+                position: fixed;
+                left: 10vw;
+                top: 10vh;
+                border-radius: 15px;
+                box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);// モーダルにシャドウをかける
+                transition: all 0.6s;
+                // cursor: default;
+                // 初期状態は非表示
+                z-index: -10;
+                opacity: 0;
+                visibility: hidden;
+
+                .ranking_container{
+                    padding: 30px;
+
+                    h2{
+                        border-bottom: 3px solid black;
+                        width: 20vw;
+                        margin: 0 auto;
+                        margin-bottom: 20px;
+                        z-index: 10;
+                    }
+                    p{
+                        margin-bottom: 12px;
+                    }
+                    .table{
+                        width: 60%;
+                        margin: 0 auto;
+                        margin-bottom: 16px;
+
+                    }
+                }
+            }
+
+            .ranking_wrapper.panelactive{
+                // モーダルを開く
+                z-index: 999; 
+                opacity: 1;
+                visibility: visible;
+                // overflow: auto;
+                // -webkit-overflow-scrolling: touch;
+                transition: all 0.6s;
             }
         }
     }
