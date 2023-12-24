@@ -4,7 +4,7 @@ main{
         margin: 0 auto;
         h2{
             padding-bottom: 2px;
-            border-bottom: 5px solid #AC9494;
+            border-bottom: 5px solid #aaaaaa;
             margin-bottom: 15px;
             font-size: 25px;
             font-weight: bold;
@@ -15,10 +15,12 @@ main{
 
             display: flex;
             width: 95%;
-            height: var(--image-size);
+            height: calc(var(--image-size) + 20px);
             border-radius: 15px;
             margin: 0 auto 15px;
-            background-color: #DBE5C6;
+            background-color: #d4e8ff;
+            // border: 1px solid #0077ff;
+            padding: 10px;
             .game-image{
                 width: var(--image-size);
                 height: 100%;
@@ -35,7 +37,7 @@ main{
                 margin: 0 auto;
                 h3{
                     padding-bottom: 2px;
-                    border-bottom: 5px solid #7575E1;
+                    border-bottom: 5px solid #0075ff;
                     margin-bottom: calc(var(--image-size) / 5);
                     font-size: 30px;
                     font-weight: bold;
@@ -44,15 +46,14 @@ main{
                     font-size: 16px;
                 }
                 .bottom-info{
-                    position: absolute;
-                    bottom: 5px;
-                    display: flex;
-                    justify-content: space-between;
                     width: 100%;
-                    .info{
-                        font-size: 16px;
-                    }
+
                     .ranking{
+                        display: inline;
+                        position: absolute;
+                        bottom: 5px;
+                        right: 0;
+
                         a{
                             font-size: 16px;
                             transition: 0.3s;
