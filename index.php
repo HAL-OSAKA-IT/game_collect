@@ -7,10 +7,10 @@
     <title>Document</title>
     <!-- リセットCSSの適用 -->
     <link rel="stylesheet" href="./css/destyle.css">
-    <link rel="stylesheet" href="./css/style.css?=231220"> <!-- cssに変更を加えた時にクエリ文字を変更することでキャッシュが残らないようになります -->
+    <link rel="stylesheet" href="./css/style.css?231224"> <!-- cssに変更を加えた時にクエリ文字を変更することでキャッシュが残らないようになります -->
 </head>
 
-<?php include '/templates/header.php'; ?>
+<?php include './templates/header.php'; ?>
 <body>
     <main>
         <section id="game-list">
