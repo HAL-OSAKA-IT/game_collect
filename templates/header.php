@@ -19,12 +19,12 @@ $siteURL = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_
 </head>
 <body>
     <header>
-    <nav id="nav">
-        <h1><a href="<?php echo $siteURL; ?>"><img src="./image/logo.png" alt="game collect"></a></h1>
+        <nav id="nav">
+            <h1><a href="<?php echo $siteURL; ?>"><img src="./image/logo.png" alt="game collect"></a></h1>
             <ul id="menu_group">
 				<!-- ログイン状態によって表示項目を変化 -->
 				<?php
-					if(empty($_SESSION['user_id'])){
+					if(empty($_SESSION['member_id'])){
 						echo '<li class="menu_item"><a href="' . $siteURL . '/member/login.php">ログイン</a></li>';
 						echo '<li class="menu_item"><a href="' . $siteURL . '/member/registration.php">会員登録</a></li>';
 					}else{
