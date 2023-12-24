@@ -25,3 +25,21 @@ function db_connect(){
         die();
     }
 }
+
+function return_ranking($game_id){
+    $dbh = db_connect();
+    $sql = "
+        SELECT *
+        FROM scores s
+            INNER JOIN members m
+                ON s.member_id = m.id
+        WHERE game_id = :game_id
+        ORDER BY s.score DESC, m.name
+    ";
+    $stmt = $dbh -> prepare($sql);
+    $stmt -> bindValue(':game_id', $game_id, PDO::PARAM_INT);
+    $stmt -> execute();
+    $array_ranking = $stmt -> fetchAll();
+
+    return $array_ranking;
+}

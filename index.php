@@ -31,22 +31,30 @@
 <?php include './templates/header.php'; ?>
 <body>
     <main>
+        <!-- モーダルを開いたときのグレー背景 -->
+        <div class="layer"></div>
         <section id="game-list">
             <h2>ゲーム一覧</h2>
-            <?php foreach($game_array as $index => $array): ?>
+            <?php foreach($game_array as $game_number => $array): ?>
                 <div class="game">
                     <p class="game-image"><img src="./image/gameImage.png" alt="ゲーム名"></p>
                     <div class="detail">
                         <h3><?php echo $array['name']; ?></h3>
                         <p class="desc"><?php echo $array['explanation']; ?></p>
                         <div class="bottom-info">
-                            <p class="ranking"><a href="#">ランキングを見る</a></p>
+                            <p class="ranking"><button class='button'>ランキングを見る</button></p>
                         </div><!-- bottom-info -->
                     </div><!-- detail -->
+                    <?php
+                        $game_title = $array['name'];
+                        include './templates/ranking.php';
+                    ?>
                 </div><!-- game -->
             <?php endforeach ?>
         </section><!-- game-list -->
     </main>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
