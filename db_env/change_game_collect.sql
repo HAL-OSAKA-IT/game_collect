@@ -1,0 +1,1 @@
+ALTER TABLE `scores` CHANGE `user_id` `member_id` INT(5) NOT NULL COMMENT 'ユーザーID';
