@@ -1,0 +1,139 @@
+main{
+    .layer{
+        // モーダルを開いたときのグレー背景のスタイル
+        background: rgba(0, 0, 0, .3); // 背景を薄くする
+        width: 100vw;
+        height: 100vh;
+        position: fixed; // 画面に固定するために指定
+        top: 0;
+        left: 0;
+        transition: 0.6s;
+        // 最初は非表示にする
+        z-index: -10;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .layer.panelactive{
+        // モーダルを表示する
+        z-index: 999;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #game-list{
+        width: 60%;
+        margin: 0 auto;
+        h2{
+            padding-bottom: 2px;
+            border-bottom: 5px solid #aaaaaa;
+            margin-bottom: 15px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .game{
+            // ゲーム画像(正方形)の1辺の長さ
+            --image-size: 15vw;
+
+            display: flex;
+            width: 95%;
+            height: calc(var(--image-size) + 20px);
+            border-radius: 15px;
+            margin: 0 auto 15px;
+            background-color: #d4e8ff;
+            // border: 1px solid #0077ff;
+            padding: 10px;
+            .game-image{
+                width: var(--image-size);
+                height: 100%;
+                img{
+                    border-radius: 15px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .detail{
+                position: relative;
+                width: calc(100% - var(--image-size) - 20px);
+                padding-top: 10px;
+                margin: 0 auto;
+                h3{
+                    padding-bottom: 2px;
+                    border-bottom: 5px solid #0075ff;
+                    margin-bottom: calc(var(--image-size) / 5);
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+                .desc{
+                    font-size: 16px;
+                }
+                .bottom-info{
+                    width: 100%;
+
+                    .ranking{
+                        display: inline;
+                        position: absolute;
+                        bottom: 5px;
+                        right: 0;
+
+                        button{
+                            font-size: 16px;
+                            transition: 0.3s;
+
+                            &:hover{
+                                opacity: 20%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ranking.phpをindex.phpで呼び出したときのスタイル
+            .ranking_wrapper{
+                width: 80vw;
+                height: 80vh;
+                position: fixed;
+                left: 10vw;
+                top: 10vh;
+                border-radius: 15px;
+                box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);// モーダルにシャドウをかける
+                transition: all 0.6s;
+                // cursor: default;
+                // 初期状態は非表示
+                z-index: -10;
+                opacity: 0;
+                visibility: hidden;
+
+                .ranking_container{
+                    padding: 30px;
+
+                    h2{
+                        border-bottom: 3px solid black;
+                        width: 20vw;
+                        margin: 0 auto;
+                        margin-bottom: 20px;
+                        z-index: 10;
+                    }
+                    p{
+                        margin-bottom: 12px;
+                    }
+                    .table{
+                        width: 60%;
+                        margin: 0 auto;
+                        margin-bottom: 16px;
+
+                    }
+                }
+            }
+
+            .ranking_wrapper.panelactive{
+                // モーダルを開く
+                z-index: 999; 
+                opacity: 1;
+                visibility: visible;
+                // overflow: auto;
+                // -webkit-overflow-scrolling: touch;
+                transition: all 0.6s;
+            }
+        }
+    }
+}

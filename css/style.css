@@ -1,0 +1,116 @@
+main .layer {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.6s;
+  z-index: -10;
+  opacity: 0;
+  visibility: hidden;
+}
+main .layer.panelactive {
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+}
+main #game-list {
+  width: 60%;
+  margin: 0 auto;
+}
+main #game-list h2 {
+  padding-bottom: 2px;
+  border-bottom: 5px solid #aaaaaa;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: bold;
+}
+main #game-list .game {
+  --image-size: 15vw;
+  display: flex;
+  width: 95%;
+  height: calc(var(--image-size) + 20px);
+  border-radius: 15px;
+  margin: 0 auto 15px;
+  background-color: #d4e8ff;
+  padding: 10px;
+}
+main #game-list .game .game-image {
+  width: var(--image-size);
+  height: 100%;
+}
+main #game-list .game .game-image img {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+}
+main #game-list .game .detail {
+  position: relative;
+  width: calc(100% - var(--image-size) - 20px);
+  padding-top: 10px;
+  margin: 0 auto;
+}
+main #game-list .game .detail h3 {
+  padding-bottom: 2px;
+  border-bottom: 5px solid #0075ff;
+  margin-bottom: calc(var(--image-size) / 5);
+  font-size: 30px;
+  font-weight: bold;
+}
+main #game-list .game .detail .desc {
+  font-size: 16px;
+}
+main #game-list .game .detail .bottom-info {
+  width: 100%;
+}
+main #game-list .game .detail .bottom-info .ranking {
+  display: inline;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+}
+main #game-list .game .detail .bottom-info .ranking button {
+  font-size: 16px;
+  transition: 0.3s;
+}
+main #game-list .game .detail .bottom-info .ranking button:hover {
+  opacity: 20%;
+}
+main #game-list .game .ranking_wrapper {
+  width: 80vw;
+  height: 80vh;
+  position: fixed;
+  left: 10vw;
+  top: 10vh;
+  border-radius: 15px;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.6s;
+  z-index: -10;
+  opacity: 0;
+  visibility: hidden;
+}
+main #game-list .game .ranking_wrapper .ranking_container {
+  padding: 30px;
+}
+main #game-list .game .ranking_wrapper .ranking_container h2 {
+  border-bottom: 3px solid black;
+  width: 20vw;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  z-index: 10;
+}
+main #game-list .game .ranking_wrapper .ranking_container p {
+  margin-bottom: 12px;
+}
+main #game-list .game .ranking_wrapper .ranking_container .table {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+main #game-list .game .ranking_wrapper.panelactive {
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.6s;
+}/*# sourceMappingURL=style.css.map */

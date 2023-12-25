@@ -1,0 +1,69 @@
+.ranking_wrapper {
+  text-align: center;
+  background-color: white;
+  overflow-x: hidden;
+}
+.ranking_wrapper .ranking_container {
+  height: 100%;
+  width: 100%;
+}
+.ranking_wrapper .ranking_container h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.ranking_wrapper .ranking_container p {
+  font-size: 16px;
+}
+.ranking_wrapper .ranking_container .table {
+  background-color: rgb(217, 255, 255);
+  border: black solid 2px;
+  overflow-y: scroll;
+}
+.ranking_wrapper .ranking_container .table tr {
+  border: black solid 1px;
+}
+.ranking_wrapper .ranking_container .table tr:nth-child(even) {
+  background-color: #eee;
+}
+.ranking_wrapper .ranking_container .table .rank {
+  width: 20%;
+}
+.ranking_wrapper .ranking_container .table .name {
+  width: 60%;
+}
+.ranking_wrapper .ranking_container .table .score {
+  width: 20%;
+}
+.ranking_wrapper .ranking_container .table th {
+  height: 7vh;
+  border-bottom: black dashed 2px;
+  border-right: black dashed 1px;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  top: 0;
+}
+.ranking_wrapper .ranking_container .table td {
+  height: 15vh;
+  text-align: center;
+  vertical-align: middle;
+  border: black dashed 1px;
+  margin: auto 0;
+}
+.ranking_wrapper .ranking_container .back {
+  background-color: red;
+  border: rgb(223, 186, 186) solid 1px;
+  color: white;
+  font-weight: bold;
+  padding: 2vh 7vw;
+  border: none;
+  margin-bottom: 2rem;
+  transition: 0.5s;
+  box-shadow: 3px 3px 1px #666666;
+}
+.ranking_wrapper .ranking_container .back:hover {
+  background-color: white;
+  color: red;
+  border: red solid 1px;
+  box-shadow: 1.5px 1.5px 0.5px #666666;
+}/*# sourceMappingURL=ranking.css.map */
