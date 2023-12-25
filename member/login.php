@@ -1,4 +1,5 @@
 <?php
+session_start();
 // game_collectがカレントディレクトリとなるpathを設定
 $path = '../';
 include $path.'templates/function.php';
@@ -52,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <!-- 登録・ログイン共通CSS設定 -->
     <link rel="stylesheet" href="./css/form.css">
 </head>
+<?php include '../templates/header.php'; ?>
 <body>
     <h2>ログイン</h2>
     <div id="form">

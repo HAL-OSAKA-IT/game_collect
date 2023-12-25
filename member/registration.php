@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include '../templates/function.php';
 
 /*      入力チェック、会員登録       */
@@ -67,7 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $stmt -> execute();
         $member_id = $stmt->fetch();
 
-        session_start();
         $_SESSION['member_id'] = $member_id['id'];
         // データ挿入が完了したらindex.phpにリダイレクト
         // これによって、リロード対策ができる
@@ -89,29 +89,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <link rel="stylesheet" href="../css/destyle.css">
     <link rel="stylesheet" href="./css/form.css">
 </head>
+<?php include '../templates/header.php'; ?>
 <body>
     <h2>新規会員登録</h2>
     <div id="form">
         <div id="input_wrapper" class="form_contents">
             <h3>会員登録</h3>
             <p>ニックネームとパスワードで会員登録</p>
-            <!-- ニックネームが未入力の場合 -->
-            <?php if(!empty($error['name']) && $error['name'] == 'blank'): ?>
-                <p class='errmsg'>※ニックネームを入力してください</p>
-            <!-- 入力したニックネームが15字より多い場合 -->
-            <?php elseif(!empty($error['name']) && $error['name'] == 'long'): ?>
-                <p class="errmsg">※ニックネームは15文字以内で入力してください</p>
-            <!-- 入力したニックネームが既に使われている場合 -->
-            <?php elseif(!empty($error['name']) && $error['name'] == 'registered'): ?>
-                <p class="errmsg">※既に使われているニックネームです</p>
-            <?php endif ?>
-            <!-- パスワードが未入力の場合 -->
-            <?php if(!empty($error['password_blank']) && $error['password_blank'] == 'blank'): ?>
-                <p class="errmsg">※パスワードを入力してください</p>
-            <!-- パスワードに想定外の文字がある場合 -->
-            <?php elseif(!empty($error['password_type']) && $error['password_type'] == 'wrong'): ?>
-                <p class="errmsg">英数字で入力してください</p>
-            <?php endif ?>
+            <!-- エラーメッセージ -->
+                <!-- ニックネームが未入力の場合 -->
+                <?php if(!empty($error['name']) && $error['name'] == 'blank'): ?>
+                    <p class='errmsg'>※ニックネームを入力してください</p>
+                <!-- 入力したニックネームが15字より多い場合 -->
+                <?php elseif(!empty($error['name']) && $error['name'] == 'long'): ?>
+                    <p class="errmsg">※ニックネームは15文字以内で入力してください</p>
+                <!-- 入力したニックネームが既に使われている場合 -->
+                <?php elseif(!empty($error['name']) && $error['name'] == 'registered'): ?>
+                    <p class="errmsg">※既に使われているニックネームです</p>
+                <?php endif ?>
+                <!-- パスワードが未入力の場合 -->
+                <?php if(!empty($error['password_blank']) && $error['password_blank'] == 'blank'): ?>
+                    <p class="errmsg">※パスワードを入力してください</p>
+                <!-- パスワードに想定外の文字がある場合 -->
+                <?php elseif(!empty($error['password_type']) && $error['password_type'] == 'wrong'): ?>
+                    <p class="errmsg">英数字で入力してください</p>
+                <?php endif ?>
+            <!-- ここまで -->
+
             <form action="" method="post">
                 <div id="input_area">
                     <!-- ユーザー名の入力 -->

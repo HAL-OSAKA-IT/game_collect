@@ -7,20 +7,13 @@
 $siteURL = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/game_collect';
 ?>
 
-<!DOCTYPE html>
-<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- リセットCSSの適用 -->
-    <link rel="stylesheet" href="<?php echo $siteURL; ?>/css/destyle.css">
     <link rel="stylesheet" href="<?php echo $siteURL; ?>/templates/css/header.css?231224">
 </head>
 <body>
     <header>
         <nav id="nav">
-            <h1><a href="<?php echo $siteURL; ?>"><img src="./image/logo.png" alt="game collect"></a></h1>
+            <h1><a href="<?php echo $siteURL; ?>"><img src="<?php echo $siteURL; ?>/image/logo.png" alt="game collect"></a></h1>
             <ul id="menu_group">
 				<!-- ログイン状態によって表示項目を変化 -->
 				<?php
