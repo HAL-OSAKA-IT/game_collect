@@ -41,6 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
 ?>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,18 +57,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <div id="form">
         <div id="input_wrapper" class="form_contents">
             <h3>会員の方</h3>
-            <p>ユーザー名とパスワードでログイン</p>
+            <p>ニックネームとパスワードでログイン</p>
             <!-- ユーザー名かパスワードが未入力の場合 -->
             <?php if(!empty($error['blank']) && $error['blank'] === 'blank'): ?>
-                <p class="error">※未入力項目があります。</p>
+                <p class="errmsg">※未入力項目があります。</p>
             <!-- ユーザー名、パスワードを間違えた場合 -->
             <?php elseif(!empty($error['login']) && $error['login'] === 'wrong'): ?>
-                <p class="error">※ユーザー名かパスワードが違います。</p>
+                <p class="errmsg">※ユーザー名かパスワードが違います。</p>
             <?php endif; ?>
             <form action="" method="post">
                 <div id="input_area">
                     <!-- ユーザー名の入力 -->
-                    <input type="text" id="name" placeholder="ユーザー名" name="name" autocomplete="off">
+                    <input type="text" id="name" placeholder="ニックネーム" name="name" autocomplete="off">
                     <!-- パスワードエリア -->
                     <div class="password_wrapper">
                         <!-- パスワードの入力 -->
@@ -87,30 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     </div>
 
 
-    <!--
-        ====================================================
-                パスワード表示切り替えscript ここから
-        ====================================================
-    -->
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const togglePassword = document.querySelector("#toggle_password");
-        const password = document.querySelector("#password");
-
-        togglePassword.addEventListener("click", function() {
-        // パスワードのタイプを切り替える
-        const type = password.getAttribute("type") === "password" ? "text" : "password";
-        password.setAttribute("type", type);
-
-        // アイコンのスタイルを切り替える
-        this.classList.toggle("is-visible");
-        });
-    });
-    </script>
-    <!--
-        ====================================================
-                パスワード表示切り替えscript ここまで
-        ====================================================
-    -->
+    <script src="./js/script.js"></script>
 
 </body>
+</html>

@@ -1,6 +1,10 @@
 $pd: 2%;
 $fontWeight: 600;
 $transition: .2s;
+$fontWeight: 600;
+$transition: .2s;
+$buttoncolor:#0075ff;
+$borderradius: 0.3rem;
 
 html {
     box-sizing: border-box;
@@ -11,16 +15,22 @@ h2 {
     font-size: 32px;
 }
 #form {
-    margin: 0 10%;
-    background-color: #f2f2f2;
     padding: 1.5%;
     .form_contents {
+        width: 70%;
         margin: 0 auto;
-        background-color: #fff;
+        background-color: #f0f7ff;
+        border: solid 2px #d5e2ff;
+        border-radius: 1rem;
+
         h3 {
             font-size: 1.6rem;
             padding: $pd;
             font-weight: $fontWeight;
+        }
+        p{
+            font-size: 1rem;
+            padding: 0 4%;
         }
     }
 
@@ -33,13 +43,14 @@ h2 {
             font-size: 1rem;
             padding-left: $pd;
         }
-        .error {
-            color: red;
+        .errmsg{
+            color: #ff0000;
             margin: 1% 0;
         }
         #input_area {
             margin: 0 25%;
-            padding-bottom: 2%;
+            padding: 1%;
+
             // ユーザー名入力エリア
             #name {
                 display: block;
@@ -49,6 +60,7 @@ h2 {
                 border: 2px solid #ddd; /*枠線*/
                 border-radius: 0.3rem;
                 padding-left: 3%;
+                background-color: #fff;
             }
             // パスワード入力エリア親要素
             .password_wrapper {
@@ -59,6 +71,7 @@ h2 {
                 border: 2px solid #ddd; /*枠線*/
                 border-radius: 0.3rem;
                 padding-left: 3%;
+                background-color: #fff;
                 // パスワード入力エリア
                 #password {
                     flex: 1;
@@ -79,10 +92,10 @@ h2 {
                 }
             }
             // ログインボタン
-            #login_btn {
+            button{
                 display: block;
-                margin: 0 auto 2%;
-                background-color: #0075ff;
+                margin: 4% auto 2%;
+                background-color: $buttoncolor;
                 color: #fff;
                 padding: 2.4% 0;
                 width: 68%;
@@ -90,10 +103,11 @@ h2 {
                 font-weight: $fontWeight;
                 border-radius: 1.8rem;
                 transition: $transition;
-                &:hover {
+                &:hover{
                     background-color: #003aaf;
                 }
             }
+
         }
     }
     /* ===========================================
@@ -128,109 +142,5 @@ h2 {
     /* ===========================================
                 非会員の方エリア　ここまで
     ============================================ */
-}
-$fontWeight: 600;
-$transition: .2s;
-$buttoncolor:#0075ff;
-$borderradius: 0.3rem;
 
-html {
-    box-sizing: border-box;
-    font-size: 16px;
-}
-#form{
-    margin: 0 10%;
-    .form_contents{
-        h2{
-            font-size: 1.6rem;
-            margin: 2% 0;
-            padding: 3% 1%;
-            font-weight: $fontWeight;
-        }
-        p{
-            font-size: 1rem;
-            margin: 2% 0;
-            padding: 2% 4%;
-        }
-        #input_area{
-            margin: 0 20%;
-            padding: 3%;
-            background-color: #f0f7ff;
-            border: solid 1px #e0eaff;
-            border-radius: 1rem;
-            input{
-                display: block;
-                margin: 5% auto;
-                width: 100%;
-                height: 5vh;
-                border: 2px solid #ddd; /*枠線*/
-                border-radius: $borderradius;
-                padding-left: 3%;
-            }
-            .errmsg{
-                color: #ff0000;
-            }
-            button{
-                display: block;
-                margin: 4% auto 2%;
-                background-color: $buttoncolor;
-                color: #fff;
-                padding: 2.4% 0;
-                width: 68%;
-                text-align: center;
-                font-weight: $fontWeight;
-                border-radius: 1.8rem;
-                transition: $transition;
-            }
-        }
-    }
-    #transition_wrapper{
-        #input_area{
-            button{
-                border: solid 1px $buttoncolor;
-                &:hover{
-                    color: white;
-                    background-color: #003aaf;
-                }
-            }
-        }
-    }
-}
-
-#comp_wrapper{
-    margin: 0 10%;
-    padding: 3%;
-    background-color: #eff5fe;
-    border: #d3e1ff solid 1px;
-    border-radius: 1rem;
-    h2{
-        font-size: 1.6rem;
-        margin: 2% 0;
-        padding: 3% 2%;
-        font-weight: $fontWeight;
-    }
-    .comp_msgbox{
-        p{
-            font-size: 1rem;
-            margin: 1% 0;
-            padding: 1% 5%;
-        }
-    }
-    button{
-        display: block;
-        color: #fff;
-        background-color: $buttoncolor;
-        border: solid 1px $buttoncolor;
-        font-weight: $fontWeight;
-        text-align: center;
-        border-radius: 1.8rem;
-        width: 68%;
-        margin: 4% auto 2%;
-        padding: 2.4% 0;
-        transition: $transition;
-        &:hover{
-            color: white;
-            background-color: #003aaf;
-        }
-    }
 }

@@ -91,38 +91,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 </head>
 <body>
     <h2>新規会員登録</h2>
-    <div id="form" >
-        <div id="transition_wrapper" class="form_contents">
+    <div id="form">
+        <div id="input_wrapper" class="form_contents">
+            <h3>会員登録</h3>
             <p>ニックネームとパスワードで会員登録</p>
-
-            <form action="" method="POST" autocomplete="off">
+            <!-- ニックネームが未入力の場合 -->
+            <?php if(!empty($error['name']) && $error['name'] == 'blank'): ?>
+                <p class='errmsg'>※ニックネームを入力してください</p>
+            <!-- 入力したニックネームが15字より多い場合 -->
+            <?php elseif(!empty($error['name']) && $error['name'] == 'long'): ?>
+                <p class="errmsg">※ニックネームは15文字以内で入力してください</p>
+            <!-- 入力したニックネームが既に使われている場合 -->
+            <?php elseif(!empty($error['name']) && $error['name'] == 'registered'): ?>
+                <p class="errmsg">※既に使われているニックネームです</p>
+            <?php endif ?>
+            <!-- パスワードが未入力の場合 -->
+            <?php if(!empty($error['password_blank']) && $error['password_blank'] == 'blank'): ?>
+                <p class="errmsg">※パスワードを入力してください</p>
+            <!-- パスワードに想定外の文字がある場合 -->
+            <?php elseif(!empty($error['password_type']) && $error['password_type'] == 'wrong'): ?>
+                <p class="errmsg">英数字で入力してください</p>
+            <?php endif ?>
+            <form action="" method="post">
                 <div id="input_area">
-                    <input type="text" name="name" placeholder="ニックネーム" value="<?php if(!empty($inputname)){ echo $inputname; } ?>">
-                    <!-- ニックネーム用エラーメッセージ -->
-                        <?php if(!empty($error['name']) && $error['name'] == 'blank'): ?>
-                            <p class='errmsg'>ニックネームを入力してください</p>
-                        <?php elseif(!empty($error['name']) && $error['name'] == 'long'): ?>
-                            <p class="errmsg">15文字以内で入力してください</p>
-                        <?php elseif(!empty($error['name']) && $error['name'] == 'registered'): ?>
-                            <p class="errmsg">既に使われているニックネームです</p>
-                        <?php endif ?>
-                    <!-- ここまで -->
-
-                    <input type="password" name="password" placeholder="パスワード" name="password">
-
-                    <!-- パスワード用エラーメッセージ -->
-                        <?php if(!empty($error['password_blank']) && $error['password_blank'] == 'blank'): ?>
-                            <p class="errmsg">パスワードを入力してください</p>
-                        <?php elseif(!empty($error['password_len']) && $error['password_len'] == 'long'): ?>
-                            <p class="errmsg">〇文字以内で入力してください</p>
-                        <?php elseif(!empty($error['password_type']) && $error['password_type'] == 'wrong'): ?>
-                            <p class="errmsg">英数字で入力してください</p>
-                        <?php endif ?>
-                    <!-- ここまで -->
+                    <!-- ユーザー名の入力 -->
+                    <input type="text" id="name" name="name" placeholder="ニックネーム" value="<?php if(!empty($inputname)){ echo $inputname; } ?>" autocomplete="off">
+                    <!-- パスワードエリア -->
+                    <div class="password_wrapper">
+                        <!-- パスワードの入力 -->
+                        <input type="password" id="password" placeholder="パスワード" name="password">
+                        <!-- パスワード表示切り替えボタン（アイコン） -->
+                        <i id="toggle_password"></i>
+                    </div>
+                    <!-- 会員登録ボタン -->
                     <button type="submit">新規会員登録</button>
                 </div>
             </form>
         </div>
+        <div id="transition_wrapper" class="form_contents">
+            <h3>会員の方</h3>
+            <a href="./login.php">ログイン</a>
+        </div>
     </div>
+    <script src="./js/script.js"></script>
 </body>
 </html>
