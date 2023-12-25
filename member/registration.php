@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include '../templates/function.php';
+session_check();
 
 /*      入力チェック、会員登録       */
 // 入力済み初期化
@@ -69,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $member_id = $stmt->fetch();
 
         $_SESSION['member_id'] = $member_id['id'];
+        update_last_activity();
         // データ挿入が完了したらindex.phpにリダイレクト
         // これによって、リロード対策ができる
         header("Location:../");

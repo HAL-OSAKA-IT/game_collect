@@ -1,8 +1,8 @@
 <?php
 session_start();
-// game_collectがカレントディレクトリとなるpathを設定
-$path = '../';
-include $path.'templates/function.php';
+include '../templates/function.php';
+session_check();
+
 
 
 /* ================================================================================
@@ -26,9 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         if ($result && password_verify($password, $result['password'])){
             $_SESSION['member_id'] = $result['id'];
-            $_SESSION['LAST_ACTIVITY'] = time();
+            update_last_activity();
             // index.phpにリダイレクト
-            header('Location:' . $path);
+            header('Location: ../');
             exit();
         } else {
             $error['login'] = 'wrong';
