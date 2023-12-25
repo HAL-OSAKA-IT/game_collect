@@ -22,7 +22,7 @@ $siteURL = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_
 						echo '<li class="menu_item"><a href="' . $siteURL . '/member/registration.php">会員登録</a></li>';
 					}else{
 						echo '<li class="menu_item"><a href="' . $siteURL . '">アカウント削除</a></li>';
-						echo '<li class="menu_item"><a href="' . $siteURL . '">ログアウト</a></li>';
+						echo '<li class="menu_item"><a href="' . $siteURL . '/member/logout.php">ログアウト</a></li>';
 					}
 				?>
             </ul>
