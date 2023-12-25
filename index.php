@@ -1,19 +1,20 @@
 <?php
-    include './templates/function.php';
-    $game_array = array(
-        '1' => array(
-            'name' => 'タイピングゲーム',
-            'explanation' => '英語のタイピングゲームです。'
-        ),
-        '2' => array(
-            'name' => 'testgame2',
-            'explanation' => 'ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文'
-        ),
-        '3' => array(
-            'name' => 'testgame3',
-            'explanation' => 'ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文'
-        )
-    );
+session_start();
+include './templates/function.php';
+$game_array = array(
+    '1' => array(
+        'name' => 'タイピングゲーム',
+        'explanation' => '英語のタイピングゲームです。'
+    ),
+    '2' => array(
+        'name' => 'testgame2',
+        'explanation' => 'ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文'
+    ),
+    '3' => array(
+        'name' => 'testgame3',
+        'explanation' => 'ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文'
+    )
+);
 
 ?>
 <!DOCTYPE html>
@@ -55,6 +56,11 @@
     </main>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
+    <?php if(!empty($_SESSION['member_id'])): ?>
+        <script type='text/javascript'>
+            alert('ログインが完了しました！早速ゲームを遊んでみましょう！');
+        </script>
+    <?php endif ?>
 </body>
 
 </html>
