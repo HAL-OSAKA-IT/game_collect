@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $stmt -> bindValue(':name', $name, PDO::PARAM_STR);
         $stmt -> execute();
         $member_id = $stmt->fetch();
-        
+
         session_start();
         $_SESSION['member_id'] = $member_id['id'];
         // データ挿入が完了したらindex.phpにリダイレクト
@@ -90,9 +90,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
+    <h2>新規会員登録</h2>
     <div id="form" >
         <div id="transition_wrapper" class="form_contents">
-            <h2>新規会員登録</h2>
             <p>ニックネームとパスワードで会員登録</p>
 
             <form action="" method="POST" autocomplete="off">
