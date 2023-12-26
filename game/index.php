@@ -3,18 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="./../css/game.css">
+	<title>game collect | PLAY</title>
+	<link rel="stylesheet" href="./css/game.css">
 </head>
-<?php include ( dirname(__FILE__) . '/header.php' ); ?>
+<?php include '../templates/header.php'; ?>
 <body>
 	<!-- クエリパラメータでプレイ中のゲームを管理 -->
-	<!-- http://localhost/game_collect/templates/game.php?gameID=0 -->
+	<!-- http://localhost/game_collect/game?gameID=0 -->
 	<?php 
 		if (isset($_GET['gameID'])) {
 			$gameID = $_GET['gameID'];
 		} else {
-			$gameID = 0;
+			$gameID = 1;
 		}
 	?>
 
