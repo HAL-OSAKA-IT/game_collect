@@ -1,0 +1,20 @@
+main{
+	position: relative;
+	margin-top: -70px;
+
+	#back{
+		position: absolute;
+		left: 20px;
+		font-size: 16px;
+		a{
+			transition: 0.3s;
+			&:hover{
+				opacity: 0.3;
+			}
+		}
+	}
+	#gameCanvas{
+		display: block;
+		margin: 0 auto;
+	}
+}
