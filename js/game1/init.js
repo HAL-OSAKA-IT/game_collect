@@ -23,7 +23,7 @@ const gameDesc = "";
 const searchParams = new URLSearchParams(window.location.search);
 var gameID;
 if(searchParams.get("gameID") === null) {
-	gameID = "0"
+	gameID = "1"
 }else {
 	gameID = searchParams.get("gameID");
 }
