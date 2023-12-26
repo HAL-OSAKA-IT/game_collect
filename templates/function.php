@@ -26,6 +26,7 @@ function db_connect(){
     }
 }
 
+// ゲームIDのランキングを返す関数
 function return_ranking($game_id){
     $dbh = db_connect();
     $sql = "
@@ -42,4 +43,32 @@ function return_ranking($game_id){
     $array_ranking = $stmt -> fetchAll();
 
     return $array_ranking;
+}
+
+// セッションの時間更新処理
+function update_last_activity(){
+    $_SESSION['LAST_ACTIVITY'] = time();
+}
+
+// セッションチェック処理
+function session_check(){
+    $siteURL = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/game_collect';
+
+    $timeout = 60 * 20; // 20分
+
+    // LAST_ACTIVITYが設定されていて、それがタイムアウトしている場合
+    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $timeout)) {
+        session_unset(); // セッション変数を全て削除
+        session_destroy(); // セッションを完全に破棄
+        exit;
+    }
+
+    // 最後の行動時間を更新（現在時刻を代入）
+    update_last_activity();
+
+    if (!empty($_SESSION['member_id'])){
+        // ログイン済みの場合はindex.phpにリダイレクト
+        header('Location:' . $siteURL);
+        exit;
+    }
 }

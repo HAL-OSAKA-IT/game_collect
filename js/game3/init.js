@@ -33,6 +33,5 @@ const scripts = [];
 for(let i=0; i<scriptName.length; i++) {
 	scripts[i] = document.createElement('script');
 	scripts[i].src = gamePath + scriptName[i];
-	console.log(scripts[i].src);
 	document.body.appendChild(scripts[i]);
 }

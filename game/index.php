@@ -4,12 +4,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>game collect | PLAY</title>
+	<link rel="stylesheet" href="../css/destyle.css">
 	<link rel="stylesheet" href="./css/game.css">
 </head>
 <?php include '../templates/header.php'; ?>
 <body>
 	<!-- クエリパラメータでプレイ中のゲームを管理 -->
-	<!-- http://localhost/game_collect/game?gameID=0 -->
+	<!-- http://localhost/game_collect/game?gameID=1 -->
 	<?php 
 		if (isset($_GET['gameID'])) {
 			$gameID = $_GET['gameID'];

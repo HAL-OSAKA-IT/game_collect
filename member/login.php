@@ -1,7 +1,8 @@
 <?php
-// game_collectがカレントディレクトリとなるpathを設定
-$path = '../';
-include $path.'templates/function.php';
+session_start();
+include '../templates/function.php';
+session_check();
+
 
 
 /* ================================================================================
@@ -25,9 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         if ($result && password_verify($password, $result['password'])){
             $_SESSION['member_id'] = $result['id'];
-            $_SESSION['LAST_ACTIVITY'] = time();
+            update_last_activity();
             // index.phpにリダイレクト
-            header('Location:' . $path);
+            header('Location: ../');
             exit();
         } else {
             $error['login'] = 'wrong';
@@ -52,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <!-- 登録・ログイン共通CSS設定 -->
     <link rel="stylesheet" href="./css/form.css">
 </head>
+<?php include '../templates/header.php'; ?>
 <body>
     <h2>ログイン</h2>
     <div id="form">

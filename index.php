@@ -38,6 +38,8 @@ $game_array = array(
             <h2>ゲーム一覧</h2>
             <?php foreach($game_array as $game_number => $array): ?>
                 <div class="game">
+                    <!-- ゲーム画面に遷移する用 -->
+                    <a href="./game/?gameID=<?php echo $game_number; ?>" class="link"></a>
                     <p class="game-image"><img src="./image/gameImage.png" alt="ゲーム名"></p>
                     <div class="detail">
                         <h3><?php echo $array['name']; ?></h3>
