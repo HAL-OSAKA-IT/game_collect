@@ -53,11 +53,6 @@ function update_last_activity(){
 // セッションチェック処理
 function session_check(){
     $siteURL = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . '/game_collect';
-    if (!empty($_SESSION['member_id'])){
-        # ログイン済みの場合はindex.phpにリダイレクト
-        header('Location:' . $siteURL);
-        exit();
-    }
 
     $timeout = 60 * 20; // 20分
 
@@ -65,11 +60,15 @@ function session_check(){
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $timeout)) {
         session_unset(); // セッション変数を全て削除
         session_destroy(); // セッションを完全に破棄
-        # session-timeout.phpにリダイレクト
-        header("Location: ". $siteURL);
         exit;
     }
 
     // 最後の行動時間を更新（現在時刻を代入）
     update_last_activity();
+
+    if (!empty($_SESSION['member_id'])){
+        // ログイン済みの場合はindex.phpにリダイレクト
+        header('Location:' . $siteURL);
+        exit;
+    }
 }
