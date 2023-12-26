@@ -10,7 +10,7 @@
 <?php include '../templates/header.php'; ?>
 <body>
 	<!-- クエリパラメータでプレイ中のゲームを管理 -->
-	<!-- http://localhost/game_collect/game?gameID=0 -->
+	<!-- http://localhost/game_collect/game?gameID=1 -->
 	<?php 
 		if (isset($_GET['gameID'])) {
 			$gameID = $_GET['gameID'];
