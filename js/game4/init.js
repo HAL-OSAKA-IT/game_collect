@@ -1,4 +1,4 @@
-console.log('game0/init.js loaded!');
+console.log('game4/init.js loaded!');
 // このファイルはゲームの処理を行うスクリプトを読み込むためのファイルです
 // 必要なファイルを適宜以下に追記していってください
 
@@ -33,7 +33,6 @@ const scripts = [];
 for(let i=0; i<scriptName.length; i++) {
 	scripts[i] = document.createElement('script');
 	scripts[i].src = gamePath + scriptName[i];
-	console.log(scripts[i].src);
 	document.body.appendChild(scripts[i]);
 }
 
