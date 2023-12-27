@@ -1,27 +1,3 @@
-.fixed_bar {
-  margin: 0 auto;
-  width: 100%;
-}
-
-.fixed_bar ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.fixed_bar ul li {
-  width: 25%;
-  color: black;
-  background-color: aquamarine;
-}
-
-.fixed_bar ul li:hover {
-  color: aquamarine;
-  background-color: black;
-}
-
 #game1_ranking_container,
 #game2_ranking_container,
 #game3_ranking_container,
@@ -63,14 +39,10 @@
   font-size: 1.2rem;
 }
 
-#game1_ranking_container #ranking,
-#game2_ranking_container #ranking,
-#game3_ranking_container #ranking,
-#game4_ranking_container #ranking {
-  margin: 0 auto;
-}
-
-.table {
+#game1_ranking_container .table,
+#game2_ranking_container .table,
+#game3_ranking_container .table,
+#game4_ranking_container .table {
   margin: 0 auto;
   width: 60vw;
   overflow-y: auto;
@@ -80,31 +52,52 @@
   margin-bottom: 1.3rem;
 }
 
-.table tr {
+#game1_ranking_container .table tr,
+#game2_ranking_container .table tr,
+#game3_ranking_container .table tr,
+#game4_ranking_container .table tr {
   border: black solid 1px;
 }
 
-.table tr:nth-child(even) {
+#game1_ranking_container .table tr:nth-child(even),
+#game2_ranking_container .table tr:nth-child(even),
+#game3_ranking_container .table tr:nth-child(even),
+#game4_ranking_container .table tr:nth-child(even) {
   background-color: #eee;
 }
 
-.table .t_head {
+#game1_ranking_container .table .t_head,
+#game2_ranking_container .table .t_head,
+#game3_ranking_container .table .t_head,
+#game4_ranking_container .table .t_head {
   height: 7vh;
 }
 
-.table .rank {
+#game1_ranking_container .table .rank,
+#game2_ranking_container .table .rank,
+#game3_ranking_container .table .rank,
+#game4_ranking_container .table .rank {
   width: 20%;
 }
 
-.table .name {
+#game1_ranking_container .table .name,
+#game2_ranking_container .table .name,
+#game3_ranking_container .table .name,
+#game4_ranking_container .table .name {
   width: 60%;
 }
 
-.table .score {
+#game1_ranking_container .table .score,
+#game2_ranking_container .table .score,
+#game3_ranking_container .table .score,
+#game4_ranking_container .table .score {
   width: 20%;
 }
 
-.table th {
+#game1_ranking_container .table th,
+#game2_ranking_container .table th,
+#game3_ranking_container .table th,
+#game4_ranking_container .table th {
   height: 7vh;
   border-bottom: black dashed 2px;
   border-right: black dashed 1px;
@@ -114,7 +107,10 @@
   top: 0;
 }
 
-.table td {
+#game1_ranking_container .table td,
+#game2_ranking_container .table td,
+#game3_ranking_container .table td,
+#game4_ranking_container .table td {
   height: 15vh;
   text-align: center;
   vertical-align: middle;
@@ -122,7 +118,10 @@
   margin: auto 0;
 }
 
-.back {
+#game1_ranking_container .back,
+#game2_ranking_container .back,
+#game3_ranking_container .back,
+#game4_ranking_container .back {
   background-color: red;
   border: white solid 1px;
   color: white;
@@ -136,7 +135,10 @@
           box-shadow: 3px 3px 1px #666666;
 }
 
-.back:hover {
+#game1_ranking_container .back:hover,
+#game2_ranking_container .back:hover,
+#game3_ranking_container .back:hover,
+#game4_ranking_container .back:hover {
   background-color: white;
   color: red;
   border: red solid 1px;

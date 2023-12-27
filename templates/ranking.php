@@ -11,8 +11,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/destyle.css">
-    <link rel="stylesheet" href="../css/ranking.css">
+    <link rel="stylesheet" href="css/destyle.css">
+    <link rel="stylesheet" href="css/ranking.css">
 </head>
 <body>
 <button class="button" id="button1">game1</button>
@@ -23,17 +23,8 @@
 
 <!-- game1_ranking -->
 <div id="game1_ranking_container">
-  <!-- 実現できなかったので実装していません -->
-    <!-- <div class="fixed_bar">
-        <ul>
-            <li>game1</li>
-            <li>game2</li>
-            <li>game3</li>
-            <li>game4</li>
-        </ul>
-    </div> -->
 
-    <div id="ranking_container">
+    <div class="ranking_container">
         <h2>ランキング</h2>
         <p>game1</p>
         <table class="table">
@@ -66,7 +57,7 @@
 <!-- game2_ranking -->
 <div id="game2_ranking_container" class="screen">
 
-    <div id="ranking_container">
+    <div class="ranking_container">
         <h2>ランキング</h2>
         <p>game2</p>
         <table class="table">
@@ -99,7 +90,7 @@
 <!-- game3_ranking -->
 <div id="game3_ranking_container" class="screen">
 
-    <div id="ranking_container">
+    <div class="ranking_container">
         <h2>ランキング</h2>
         <p>game3</p>
         <table class="table">
@@ -132,7 +123,7 @@
 <!-- game4_ranking -->
 <div id="game4_ranking_container" class="screen">
 
-    <div id="ranking_container">
+    <div class="ranking_container">
         <h2>ランキング</h2>
         <p>game4</p>
         <table class="table">
@@ -163,7 +154,7 @@
 </div>
 
 
-<script src="../js/jquery-3.6.0.min.js"></script>
-<script src="../js/ranking.js"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/ranking.js"></script>
 </body>
 </html>
