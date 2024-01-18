@@ -22,5 +22,10 @@ function playerInput() {
 			// ゲーム中はジャンプボタンとして機能
 			jumpPlayer();
 			break;
+
+		case 2:
+			// ゲームオーバー画面で押すと初期化後タイトル画面へ
+			gameReset();
+			break;
 	}
 }

@@ -6,9 +6,11 @@ function main() {
 	fallPlayer();
     moveGate(); 
 	// 描画系処理
+	drawGround();
 	drawTitleScene();
     drawPlayer();
-    drawGate();
+    drawGate();  
+	drawGameover();
 }
 
 // 10msごとに実行

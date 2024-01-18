@@ -7,7 +7,7 @@
 </head>
 <body>
 	<!-- ゲームの画面となるキャンバス -->
-	<canvas id="gameCanvas" style="background-color: lightcyan; display: block; margin: 0 auto;"></canvas>
+	<canvas id="gameCanvas" style="background-color: black; display: block; margin: 0 auto;"></canvas>
 	<!-- 制御用のJavascript -->
 	<script src="js/canvas.js"></script>
 	<script src="js/variable.js"></script>
