@@ -11,7 +11,7 @@ function gameStart() {
 	gameState = 1;
 }
 
-// スペースキーを押したらジャンプする
+// スペースキーを押したらジャンプする（2段ジャンプまでの制御）
 function jumpPlayer() {
 	if(jampNum>=1){
 
@@ -100,13 +100,14 @@ function fallPlayer() {
 			playerY = 0;
 			playerSpeed = 0;
 		}
+
 		// 画面最下部より下に落ちるとゲームオーバー
 		if(playerY > gameHeight || isCollision) {
 			// スコア計測タイマー停止
 			clearInterval(scoreTimer);
 			// ハイスコア更新
 			maxScore = Math.max(score, maxScore);
-
+			// ゲームオーバーのステータスに変更
 			gameState = 2;
 		}
 
