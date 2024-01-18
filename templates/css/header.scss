@@ -1,0 +1,42 @@
+header{
+    --header-color1: #0075ff;
+    --header-color2: #ffffff;
+
+    border-radius: 30px;
+    border: solid 1px var(--header-color2);
+    margin: 20px 20px 60px;
+    background-color: var(--header-color1);
+    font-weight: bold;
+    color: var(--header-color2);
+    font-size: 18px;
+
+    #nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 92%;
+        height: 60px;
+        margin: 0 auto;
+        h1{
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        #menu_group{
+            display: flex;
+            .menu_item{
+                margin-left: 80px;
+            }
+        }
+    }
+    
+    // リンク
+    a{
+        transition: 0.3s;
+        &:hover{
+            opacity: 30%;
+        }
+    }
+}
