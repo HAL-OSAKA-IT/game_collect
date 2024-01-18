@@ -1,0 +1,20 @@
+main {
+  position: relative;
+  width: 90vw;
+  margin: -30px auto 0 auto;
+}
+main #back {
+  position: absolute;
+  left: 20px;
+  font-size: 16px;
+}
+main #back a {
+  transition: 0.3s;
+}
+main #back a:hover {
+  opacity: 0.3;
+}
+main #gameCanvas {
+  display: block;
+  margin: 0 auto;
+}/*# sourceMappingURL=game.css.map */
