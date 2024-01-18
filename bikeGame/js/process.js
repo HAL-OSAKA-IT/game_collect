@@ -14,9 +14,15 @@ function gameStart() {
 // スペースキーを押したらジャンプする
 function jumpPlayer() {
 	if(jampNum>=1){
-		playerImage.src = "image/bike_jamp.png";
+
 		playerSpeed = playerJumpSpeed;
 		jampNum = jampNum - 1;
+	}
+	if(jampNum === 1){
+		playerImage.src = "image/bike_jamp1.png";
+	}
+	else if(jampNum === 0){
+		playerImage.src = "image/bike_jamp2.png";	
 	}
 }
 

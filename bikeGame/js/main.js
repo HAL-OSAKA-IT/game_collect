@@ -11,6 +11,7 @@ function main() {
     drawPlayer();
     drawGate();  
 	drawGameover();
+	drawScore();
 }
 
 // 10msごとに実行

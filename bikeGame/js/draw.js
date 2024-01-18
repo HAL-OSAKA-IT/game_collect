@@ -79,3 +79,12 @@ function drawGameover() {
 		playerImage.src = "image/bike_black.png";
 	}	
 }
+
+// スコアの表示
+function drawScore() {
+	if(gameState === 1) {
+		ctx.fillStyle = "white";
+		ctx.font = "40px Zen Kaku Gothic New";
+		ctx.fillText(score, gameWidth*0.5, gameHeight*0.1);
+	}
+}
