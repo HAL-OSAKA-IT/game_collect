@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `members` (
 CREATE TABLE IF NOT EXISTS `scores` (
   `id` int(8) NOT NULL AUTO_INCREMENT COMMENT 'スコアID',
   `game_id` int(2) NOT NULL COMMENT 'ゲームID',
-  `user_id` int(5) NOT NULL COMMENT 'ユーザーID',
+  `member_id` int(5) NOT NULL COMMENT 'ユーザーID',
   `score` int(8) NOT NULL COMMENT 'スコア',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '登録日時',
   PRIMARY KEY (`id`),
