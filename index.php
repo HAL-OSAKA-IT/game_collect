@@ -3,8 +3,9 @@ session_start();
 include './templates/function.php';
 $game_array = array(
     '1' => array(
-        'name' => 'タイピングゲーム',
-        'explanation' => '英語のタイピングゲームです。'
+        'name' => 'バイクジャンプ',
+        'explanation' => '流れてくる壁や敵を避けて！',
+        'thumbnail' => './image/game1/thumbnail.png'
     ),
     '2' => array(
         'name' => 'testgame2',
@@ -40,7 +41,7 @@ $game_array = array(
                 <div class="game">
                     <!-- ゲーム画面に遷移する用 -->
                     <a href="./game/?gameID=<?php echo $game_number; ?>" class="link"></a>
-                    <p class="game-image"><img src="./image/gameImage.png" alt="ゲーム名"></p>
+                    <p class="game-image"><img src="<?php echo $array['thumbnail']; ?>" alt="ゲーム名"></p>
                     <div class="detail">
                         <h3><?php echo $array['name']; ?></h3>
                         <p class="desc"><?php echo $array['explanation']; ?></p>

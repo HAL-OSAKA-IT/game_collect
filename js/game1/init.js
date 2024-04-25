@@ -6,9 +6,11 @@ console.log('game1/init.js loaded!');
 // これらファイルは同じ数字のgameフォルダに格納すること
 // 上に書いたものから順に読み込まれる
 const scriptName = [
-	//"aaa.js",
-	//"bbb.js",
-	//"ccc.js"
+	"variable.js",
+	"process.js",
+	"input.js",
+	"draw.js",
+	"main.js"
 ];
 
 // ゲームタイトルを以下に記入
