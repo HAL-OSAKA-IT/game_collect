@@ -8,8 +8,9 @@ $game_array = array(
         'thumbnail' => './image/game1/thumbnail.png'
     ),
     '2' => array(
-        'name' => 'testgame2',
-        'explanation' => 'ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文'
+        'name' => 'タイピングゲーム',
+        'explanation' => '画面に表示される英語をどこまで打てるか！',
+        'thumbnail' => './image/game2/thumbnail.png'
     ),
     '3' => array(
         'name' => 'testgame3',
