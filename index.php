@@ -13,8 +13,9 @@ $game_array = array(
         'thumbnail' => './image/game2/thumbnail.png'
     ),
     '3' => array(
-        'name' => 'testgame3',
-        'explanation' => 'ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文ゲーム紹介文'
+        'name' => '15パズル',
+        'explanation' => '15パズルです。',
+        'thumbnail' => './image/game3/thumbnail.jpg'
     )
 );
 
